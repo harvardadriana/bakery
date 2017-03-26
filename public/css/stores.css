@@ -1,0 +1,56 @@
+/* stores.css */
+
+
+main {
+	overflow: auto;
+}
+
+#ourStores {
+	width: 900px;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 30px;
+	color: #585858;
+	overflow: auto;
+	text-align: center;
+}
+
+#ourStores h1 {
+	margin-bottom: 30px;
+}
+
+.store {
+	width: 880px;
+	height: 240px;
+	padding: 20px 0 20px 20px;
+	margin-bottom: 30px;
+	background-color: #FBFAF9;
+}
+
+.map {
+	float: left;
+	width: 390px;
+	height: 240px;
+}
+
+.storeInfo {
+	float: left;
+	width: 430px;
+	height: 200px;
+	padding: 20px;
+	margin-left: 20px;
+}
+
+.storeInfo h2 {
+	margin-bottom: 40px;
+}
+
+.storeInfo p {
+	font-style: italic;
+	margin-bottom: 0;
+	line-height: 1;
+}
+
+.time {
+	margin-top: 40px;
+}

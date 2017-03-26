@@ -1,0 +1,80 @@
+/* menu.css */
+
+
+/*  LAYOUT 
+ ************************/
+#side-menu {
+	width: 20%;
+	margin-top: 32px;
+	margin-left: 32px;
+}
+
+
+/*  SIDE NAVIGATION  
+ ************************/
+#side-menu h2 {
+	display: none;
+}
+
+#side-menu a {
+	background-color: #DDDDDD;
+}
+
+#side-menu li a {
+	display: block;
+	padding: 5px 5px 5px 10px;
+	margin-bottom: 2px;
+	color: #000;
+	border-radius: 5px;
+}
+
+#side-menu li a:hover {
+	color: #fff;
+	background-color: #DAB2BD;
+}
+
+#side-menu #active > a {
+	color: #fff;
+	background-color: #DAB2BD;	
+}
+
+#side-menu li li a {
+	padding-left: 20px;
+}
+
+.upper {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+
+/*  FOOD-GALLERY 
+ ************************/
+#food-gallery {
+	width: 70%;
+	height: auto;
+	margin: 32px 32px 32px 0;
+	background-color: #DDDDDD;
+	border-radius: 5px;
+}
+
+#food-gallery h1 {
+	color: #585858;
+	text-align: center;
+	padding-top: 20px;
+}
+
+#food-gallery ul {
+	float: left;
+	padding: 10px;
+}
+
+#food-gallery li {
+	float: left;
+	margin: 5px 5px 0 10px;
+}
+
+#food-gallery li img {
+	width: 220px;
+	height: 170px;
+}

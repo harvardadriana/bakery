@@ -1,0 +1,62 @@
+/* index.css */
+
+
+main {
+	overflow: auto;
+}
+
+
+/*  IMAGE SLIDER  
+ ************************/
+#imageSlider {
+	position: relative;
+	margin-bottom: 45px;
+}
+
+#imageSlider img {
+	height: 400px;
+	width: 1045px;
+}
+
+.hide {
+	display: none;
+}
+
+
+/*  THUMBNAILS  
+ ************************/
+figure {
+	float: left;
+	width: 200px;
+	height: auto;	
+	padding: 7px;
+	background-color: #CAC4B7;
+}
+
+figure img {
+	width: 200px;
+	height: 150px;
+}
+
+figcaption {
+	font-family: tahoma, sans-serif;
+	text-align: center;
+	padding: 8px 0;
+	color: #585858;
+	background-color: #fff;
+}
+
+figcaption a:link,
+figcaption a:visited,
+figcaption a:hover,
+figcaption a:active {
+	color: #585858;
+}
+
+#fig1 {
+	margin-left: 64px;
+}
+
+#fig1, #fig2, #fig3 {
+	margin-right: 20px;
+}

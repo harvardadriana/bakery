@@ -1,0 +1,172 @@
+/* globalstyles.css */
+
+
+html {
+	background-color: #DAB2BD; 
+ }
+
+body {
+	margin: 0 auto;
+	width: 1045px;
+	height: 100%;
+	background-color: #fff;
+	font-family: Georgia;
+}
+
+
+/*  HEADER  
+ ************************/
+header {
+	background-color: #835F6D;
+	height: 250px;
+}
+
+#logo {
+	background: url('../images/header/wallpaper.jpg') no-repeat left;
+	height: 140px;
+	padding: 15px;
+	color: #835F6D;
+}
+
+#logo img {
+	float: left;
+	width: 85px;
+	height: auto;
+	margin-top: 30px;
+}
+
+#logo h1 {
+	margin-top: 15px;
+	font-family: 'Henny Penny', cursive;
+	font-size: 51px;
+}
+
+
+/*  NAVIGATION  
+ ************************/
+nav {
+ 	position: relative;
+}
+
+nav h3 {
+	display: none;
+}
+
+nav > ul {
+	margin: 8px 0;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+}
+
+
+/*  TOP LEVEL - NAVIGATION
+ ************************/
+nav > ul > li {
+	float: left;
+}
+
+nav li a {
+	display: inline-block;
+	width: 187px;
+	height: 40px;
+	color: #fff;
+	font-size: 1.3em;
+	text-align: center;
+	padding: 15px 10px 5px 10px;
+	border: 1px solid #835F6D;
+}
+
+nav ul li a:hover {
+	color: #835F6D;
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+nav ul::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+/*  SECOND LEVEL - NAVIGATION
+ ************************/
+nav ul ul {
+	position: absolute;
+	display: none;
+	background-color: #DAB2BD;
+	top: 100%;
+}
+
+nav ul ul li a {
+	border: 1px solid #fff;
+}
+
+nav ul ul li {
+	position: relative;
+}
+
+nav ul li:hover > ul {
+	display: block;
+	z-index: 10;
+}
+
+
+/*  THIRD LEVEL - NAVIGATION
+ ************************/
+nav ul ul ul {
+	left: 100%;
+	top: 0;
+}
+
+
+/*  ACTIVE LINK IN MAIN NAVIGATION
+ ************************/
+#iamhere > a {
+	color: #fff;
+	background-color: #9b7e8a;	
+	border: 1px solid #9b7e8a;
+}
+
+
+/*  MAIN  
+ ************************/
+main {
+	clear: left;
+}
+
+p {
+	line-height: 1.7;
+	margin-bottom: 20px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/*  FOOTER  
+ ************************/
+footer {
+	clear: both;
+	width: 1045px;
+	height: 80px;
+	margin-top: 50px;
+	background-color: #835F6D;
+	text-align: center;
+	color: #fff;
+}
+
+footer p {
+	padding-top: 25px;
+	font-style: italic;
+	font-size: small;
+}
