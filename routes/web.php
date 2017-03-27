@@ -4,6 +4,12 @@
 
 
 /**
+ * bakery/order/
+ */
+Route::get('/orders', 'OrderController@index');
+
+
+/**
  * Practice - log viewer
  */
 if(config('app.env') == 'local') {

@@ -21,19 +21,18 @@
         <link href="css/lightbox.min.css" rel="stylesheet" />
         <!-- my styles -->
         <link href="css/globalstyles.css" rel="stylesheet" />
-        <link href="css/index.css" rel="stylesheet" /> 
 
         @stack('head')
 
     </head>
     <body class="home">
 
-        @yield('header')
+        @include('header')
 
         @yield('main')
 
-        @yield('footer')
-        
+        @include('footer')
+
 
         <!-- GENERAL SCRIPTS -->
         <!-- lightbox and jQuery -->
@@ -41,8 +40,7 @@
         <!-- my scripts -->
         <script src="js/scripts.js"></script>
 
-        <!-- SCRIPTS RELEVANT FOR THIS PAGE ONLY -->
-        <script src="js/index.js"></script>
+        @stack('script')
 
     </body>
 </html>

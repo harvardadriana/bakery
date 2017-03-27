@@ -3,8 +3,14 @@
 @section('title')
 
     Piece of Heaven Bakery - Homepage
-    
+
 @endsection
+
+@push('head')
+
+    <link href="css/index.css" rel="stylesheet" />
+    
+@endpush
 
 @section('main')
 
@@ -42,3 +48,10 @@
     </main>
 
 @endsection
+
+@push('script')
+
+    <script src="js/index.js"></script>
+
+@endpush
+
