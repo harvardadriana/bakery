@@ -1,0 +1,78 @@
+{
+    "cakes" : [
+        {
+            "Chocolate cake": {
+                "description": "Black Forest: layers of chocolate sponge cake with cherries, whipped cream, and more chocolate",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake1-small.jpg' alt='Chocolate cake' />"
+            }
+        },
+        {
+            "Coconut Cake": {
+                "description": "Cake with filling of coconuts and pineapple cream",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake2-small.jpg' alt='Coconut cake' />"
+            }
+        },
+        {
+            "Oreo cake": {
+                "description": "Lots of oreo cookies, choc, and cherries",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake3-small.jpg' alt='Oreo cake' />"
+            }
+        },
+        {
+            "Mushroom Cake": {
+                "description": "A cake with a bunch of mushrooms",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake4-small.jpg' alt='Mushroom cake' />"
+            }
+        },
+        {
+            "Choc Cherry Delight": {
+                "description": "Chocolate and cherries",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake5-small.jpg' alt='Choc Cherry Delight' />"
+            }
+        },
+        {
+            "Cherry Chocolate Cake": {
+                "description": "Old-fashioned cherry chocolate cake",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake6-small.jpg' alt='Cherry Chocolate Cake' />"
+            }
+        },
+        {
+            "Piece of Heaven Cake": {
+                "description": "Our favorite",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake5-small.jpg' alt='Piece of Heaven Cake' />"
+            }
+        },
+        {
+            "Caramel Mud Cake": {
+                "description": "Delicious caramel cake with some toppings on it!",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake6-small.jpg' alt='Caramel Mud Cake' />"
+            }
+        },
+        {
+            "Another Chocolate Cake": {
+                "description": "Pure and simple chocolate cake",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake6-small.jpg' alt='Another Chocolate Cake' />"
+            }
+        }
+    ],
+
+    "not cakes" : [
+        {         
+            "not cakes": {
+                "product" : "Another Chocolate Cake",
+                "description": "Pure and simple chocolate cake",
+                "price" : 9.99,
+                "image" : "<img src='images/sweets/cakes/thumb/cake6-small.jpg' alt='Another Chocolate Cake' />"
+            }   
+        }
+    ]
+}

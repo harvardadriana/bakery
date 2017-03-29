@@ -25,7 +25,8 @@
         @stack('head')
 
     </head>
-    <body class="home">
+
+        @yield('body', '<body class="home">')
 
         @include('header')
 
