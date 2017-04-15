@@ -4,7 +4,8 @@
             "Chocolate cake": {
                 "description": "Black Forest: layers of chocolate sponge cake with cherries, whipped cream, and more chocolate",
                 "price" : 9.99,
-                "image" : "<img src='images/sweets/cakes/thumb/cake1-small.jpg' alt='Chocolate cake' />"
+                "image" : "images/sweets/cakes/cake1.jpg",
+                "imageThumb" : "<img src='images/sweets/cakes/thumb/cake1-small.jpg' alt='Chocolate cake' />"
             }
         },
         {

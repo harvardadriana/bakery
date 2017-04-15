@@ -16,17 +16,17 @@
         <!-- Google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" />
         <!-- my reset css -->   
-        <link href="css/reset.css" rel="stylesheet" />
+        <link href="/css/reset.css" rel="stylesheet" />
         <!-- lightbox css -->
-        <link href="css/lightbox.min.css" rel="stylesheet" />
+        <link href="/css/lightbox.min.css" rel="stylesheet" />
         <!-- my styles -->
-        <link href="css/globalstyles.css" rel="stylesheet" />
+        <link href="/css/globalstyles.css" rel="stylesheet" />
 
         @stack('head')
 
     </head>
 
-        @yield('body', '<body class="home">')
+        <body class= {{ $path }} >
 
         @include('header')
 
@@ -37,9 +37,9 @@
 
         <!-- GENERAL SCRIPTS -->
         <!-- lightbox and jQuery -->
-        <script src="js/lightbox-plus-jquery.min.js"></script>
+        <script src="/js/lightbox-plus-jquery.min.js"></script>
         <!-- my scripts -->
-        <script src="js/scripts.js"></script>
+        <script src="/js/scripts.js"></script>
 
         @stack('script')
 

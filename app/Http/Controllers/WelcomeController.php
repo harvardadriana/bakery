@@ -10,6 +10,8 @@ class WelcomeController extends Controller
      * Get
      */
     public function __invoke(){
-    	return view('welcome');
+    	return view('welcome')->with([ 
+    		'path' => 'home'
+    	]);
 	}
 }

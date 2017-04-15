@@ -8,7 +8,7 @@
 
 @push('head')
 
-    <link href="css/cakes.css" rel="stylesheet" />
+    <link href="/css/cakes.css" rel="stylesheet" />
 
     <style>
     	
@@ -38,9 +38,15 @@
 		 	width: 250px;
 		 	display: inline;
 		 }
+	
 
+		#selection {
+			background-color: #DDDDDD;
+			margin: 32px 32px 0 32px;
 
-		/*  FOOD-GALLERY 
+		}
+
+		/*  MENU
 		 ************************/
 		#menu ul {
 			float: left;
@@ -72,11 +78,7 @@
 
 @endpush
 
-@section('body')
 
-    <body class="menu">
-
-@endsection
 
 @section('main')
 
@@ -93,9 +95,9 @@
 					<fieldset>
 						<legend>Category</legend>
 						<div id="category">
-							<label><input type="radio" name="category" value="cake" checked />Cake</label>
-							<label><input type="radio" name="category" value="snacks" />Snacks</label>
-							<label><input type="radio" name="category" value="others" />Others</label>
+							<label><input type="radio" name="category" value="cakes" {{ ($category == 'cake') ? 'CHECKED' : '' }} />Cake</label>
+							<label><input type="radio" name="category" value="snacks" {{ ($category == 'snacks') ? 'CHECKED' : '' }} />Snacks</label>
+							<label><input type="radio" name="category" value="others" {{ ($category == 'others') ? 'CHECKED' : '' }} />Others</label>
 						</div>
 					</fieldset>
 
@@ -108,7 +110,7 @@
 
 						<!-- IF YES: get coupon code -->
 						<label for="couponCode" class="textinput required" >Coupon code: <br />&#42;Required</label>
-						<input type="text" name="couponCode" id="couponCode" class="textinput" maxlength="4" placeholder="Type your coupon code" required value="" /><br />
+						<input type="text" name="couponCode" id="couponCode" class="textinput" maxlength="4" placeholder="Type your coupon code" value="" /><br />
 						
 					</fieldset>
 
@@ -119,21 +121,25 @@
 
 		</div>
 
-		<!--MENU -->
-		<div id="menu" class="gallery left">
-			<ul>
+		@if($category) 
+			<div>Filter by: {{ $category }} </div>
+		@endif
 
-				<li><a href="images/sweets/cakes/cake1.jpg" data-lightbox="cakes" data-title="Black Forest: layers of chocolate sponge cake with cherries, whipped cream, and more chocolate"><img src="images/sweets/cakes/thumb/cake1-small.jpg" alt="Chocolate cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake2.jpg" data-lightbox="cakes" data-title="Coconut Cake: cake with filling of coconuts and pineapple cream"><img src="images/sweets/cakes/thumb/cake2-small.jpg" alt="Another cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake3.jpg" data-lightbox="cakes" data-title="Oreo Cake: lots of oreo cookies, choc, and cherries"><img src="images/sweets/cakes/thumb/cake3-small.jpg" alt="Another cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake4.jpg" data-lightbox="cakes" data-title="Mushroom Cake: a cake with a bunch of mushrooms"><img src="images/sweets/cakes/thumb/cake4-small.jpg" alt="Another cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake5.jpg" data-lightbox="cakes" data-title="Choc Cherry Delight: chocolate and cherries"><img src="images/sweets/cakes/thumb/cake5-small.jpg" alt="Another cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake6.jpg" data-lightbox="cakes" data-title="Cherry Chocolate Cake: old-fashioned cherry chocolate cake"><img src="images/sweets/cakes/thumb/cake6-small.jpg" alt="Another cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake7.jpg" data-lightbox="cakes" data-title="Piece of Heaven Cake: our favorite"><img src="images/sweets/cakes/thumb/cake7-small.jpg" alt="One more cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake8.jpg" data-lightbox="cakes" data-title="Caramel Mud Cake: delicious caramel cake with some toppings on it!"><img src="images/sweets/cakes/thumb/cake8-small.jpg" alt="Another cake" /></a></li>
-				<li><a href="images/sweets/cakes/cake9.jpg" data-lightbox="cakes" data-title="Another Chocolate Cake: pure and simple chocolate cake"><img src="images/sweets/cakes/thumb/cake9-small.jpg" alt="Last cake" /></a></li>
-			</ul>
-		</div>
+
+
+		<!--MENU -->
+		@if($menu)
+
+			<div id="menu" class="gallery left">
+				<ul>
+
+
+						<li><a href="" data-lightbox="cakes" data-title="Black Forest: layers of chocolate sponge cake with cherries, whipped cream, and more chocolate"></a></li>
+
+				</ul>
+			</div>
+
+		@endif
 
 		<!-- SHOPPING CART -->
 		<div id="cart" class="right">
