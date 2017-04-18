@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ShopController extends Controller
 {
@@ -74,12 +75,17 @@ dump("loop-controller");
      * bakery/menu
      */
     public function menu(Request $request) {
-        // check mnavigation menu
+
+        // check url path
         $path = $request->path();
 
-        dump($path);
+        // returns all products in the menu
+        $product = new Product();
+        $menu = $product->get();
+
         return view('shop.menu')->with([
             'path' => 'menu',
+            'menu' => $menu,
         ]);      
     }
 

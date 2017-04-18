@@ -27,7 +27,7 @@
 
         <figure id="fig1">
             <img src="images/homepage/figure/cake.jpg" alt="cakes" title="Cakes" />
-            <figcaption><a href="cakes.html" title="Cakes">Cakes</a></figcaption>
+            <figcaption><a href="/cakes" title="Cakes">Cakes</a></figcaption>
         </figure>
 
         <figure id="fig2">
@@ -42,7 +42,7 @@
 
         <figure id="fig4">
             <img src="images/homepage/figure/snacks.jpg" alt="snacks" title="Snacks" />
-            <figcaption><a href="snacks.html" title="Snacks">Snacks</a></figcaption>
+            <figcaption><a href="/snacks" title="Snacks">Snacks</a></figcaption>
         </figure>
 
     </main>

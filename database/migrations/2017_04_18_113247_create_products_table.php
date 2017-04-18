@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('description')->nullable();
             $table->decimal('price', 7, 2);
             $table->integer('quantity');
+            $table->string('link');
             $table->string('image');
 
         });
