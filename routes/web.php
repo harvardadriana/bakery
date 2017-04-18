@@ -1,6 +1,24 @@
 <?php
 
+/**
+ * DROP
+ */
+if(App::environment('local')) {
 
+    Route::get('/drop', function() {
+
+        DB::statement('DROP database bakery');
+        DB::statement('CREATE database bakery');
+
+        return 'Dropped bakery; created bakery.';
+    });
+
+};
+
+
+/**
+ * DEBUG
+ */
 Route::get('/debug', function() {
 
 	echo '<pre>';
@@ -38,11 +56,8 @@ Route::get('/debug', function() {
 });
 
 
-
-
-
 /**
- * Practice - log viewer
+ * Log viewer
  */
 if(config('app.env') == 'local') {
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
@@ -50,15 +65,15 @@ if(config('app.env') == 'local') {
 
 
 /**
- * bakery/shop/order/
- */
-Route::get('/shop/menu', 'ShopController@menu');
-
-
-/**
  * bakery/shop/
  */
 Route::get('/shop', 'ShopController@index');
+
+
+/**
+ * bakery/menu/
+ */
+Route::get('/menu', 'ShopController@menu');
 
 
 /**

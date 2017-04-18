@@ -71,7 +71,7 @@ dump("loop-controller");
 
 
     /**
-     * bakery/shop/order
+     * bakery/menu
      */
     public function menu(Request $request) {
         // check mnavigation menu

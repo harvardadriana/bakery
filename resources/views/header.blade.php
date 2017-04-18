@@ -38,9 +38,9 @@
                     </li>
                 </ul>
             </li>
-            <li class="navshop"><a href="shop.html" title="Shop">Shop online</a></li>
             <li class="navstores"><a href="stores.html" title="Stores">Stores</a></li>
             <li class="navcontactus"><a href="contactus.html" title="Contact us">Contact us</a></li>
+            <li class="navlogin"><a href="login.html" title="Login">Login/Register</a></li>
         </ul>
     </nav>
 </header>
