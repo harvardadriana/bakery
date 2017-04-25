@@ -16,30 +16,28 @@
 	display: none;
 }
 
-#side-menu a {
-	background-color: #DDDDDD;
-}
-
-#side-menu li a {
+#side-menu > ul > li > a,
+.subitems li {
 	display: block;
 	padding: 5px 5px 5px 10px;
 	margin-bottom: 2px;
-	color: #000;
 	border-radius: 5px;
 }
 
-#side-menu li a:hover {
+#side-menu > ul > li > a {
 	color: #fff;
 	background-color: #DAB2BD;
 }
 
-#side-menu #active > a {
-	color: #fff;
-	background-color: #DAB2BD;	
+.subitems li {
+	background-color: #DDDDDD;
+	color: #000;
+	padding-left: 20px;
 }
 
-#side-menu li li a {
-	padding-left: 20px;
+#side-menu li a:hover {
+	color: #000;
+	background-color: #DDDDDD;
 }
 
 .upper {
@@ -71,10 +69,23 @@
 
 #food-gallery li {
 	float: left;
-	margin: 5px 5px 0 10px;
+	margin: 5px 5px 10px 10px;
 }
 
 #food-gallery li img {
 	width: 220px;
 	height: 170px;
+}
+
+#food-gallery ul li a {
+	color: #000;
+}
+
+#food-gallery p {
+	margin-bottom: 0;
+}
+
+#food-gallery button {
+	float: right;
+	width: 120px;
 }

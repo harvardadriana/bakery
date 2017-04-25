@@ -1,0 +1,89 @@
+/* login.css */
+
+
+main {
+	background: url('../images/login-page/cupcakes.png') no-repeat;
+	background-size: cover;
+	width: 1045px;
+	height: 580px;
+	overflow: auto;
+}
+
+#form-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 70px;
+	background-color: rgba(242, 242, 242, 0.5);
+	border: 1px solid rgba(242, 242, 242, 0.5);
+	border-radius: 15px;
+	text-align: center;
+}
+
+#form-wrapper h1 {
+	margin: 25px 0 10px;
+	color: #3d3d3d;
+}
+
+fieldset {
+	color: #000;
+	border: none;
+	margin-bottom: 20px;
+}
+
+#loginform ul li {
+	padding-top: 15px;
+}
+
+#loginform li input, 
+label {
+	display: block;
+	width: 300px;
+	height: 30px;
+	margin: 0 auto;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+label {
+	text-align: left;
+}
+
+/* submit button */
+p input {
+	display: block;
+	margin: 0 auto;
+	width: 160px;
+	height: 50px;
+	background-color: #835F6D;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+p input:hover {
+	background-color: #fff;
+	color: #835F6D;
+}
+
+.required {
+	font-size: 70%;
+	font-style: italic;
+}
+
+/* error messages */
+label#password-error.error, 
+label#email-error.error {
+	background-image: url("../images/red_x.gif");
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	margin-top: 15px;
+	width: 230px;
+	color: red;
+	font-style: italic;
+	text-align: center;
+}
+
+/* footer */
+footer {
+	margin-top: 0;
+}

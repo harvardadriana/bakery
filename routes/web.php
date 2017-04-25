@@ -57,11 +57,17 @@ if(App::environment('local')) {
 };
 
 
+/**
+ * bakery/register/
+ */
+Route::get('/register', 'WelcomeController@register');
+
+
 
 /**
  * bakery/login/
  */
-Route::get('/login', 'ShopControllere@login');
+Route::get('/login', 'WelcomeController@login');
 
 
 /**
@@ -77,9 +83,21 @@ Route::get('/stores', 'WelcomeController@stores');
 
 
 /**
- * bakery/menu/
+ * bakery/menu/others
  */
-Route::get('/menu', 'ShopController@menu');
+Route::get('/menu/others', 'ShopController@others');
+
+
+/**
+ * bakery/menu/snacks
+ */
+Route::get('/menu/snacks', 'ShopController@snacks');
+
+
+/**
+ * bakery/menu/cakes
+ */
+Route::get('/menu/cakes', 'ShopController@cakes');
 
 
 /**

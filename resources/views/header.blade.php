@@ -9,10 +9,10 @@
         <h3>Site navigation</h3>
         <ul>
             <li class="navhome"><a href="/" title="Home">Home</a></li>
-            <li class="navmenu"><a href="/menu" title="Menu">Menu</a>
+            <li class="navmenu"><a href="/menu/cakes" title="Menu">Menu</a>
                 <ul>
                     <!-- second level menu - cakes -->
-                    <li><a href="/sweets" title="Sweets">Sweets</a>
+                    <li><a href="/menu/sweets" title="Sweets">Sweets</a>
                         <ul>
                             <li><a href="/cakes" title="Cakes">Cakes</a></li>
                             <li><a href="/cupcakes" title="Cupcakes">Cupcakes</a></li>
@@ -22,7 +22,7 @@
                         </ul>
                     </li>
                     <!-- second level menu - snacks -->
-                    <li><a href="/snacks" title="Snacks">Snacks</a>
+                    <li><a href="/menu/snacks" title="Snacks">Snacks</a>
                         <ul>
                             <li><a href="/ciabatta" title="Ciabatta">Ciabatta</a></li>
                             <li><a href="/tunamelt" title="Tuna melt">Tuna melt</a></li>
@@ -30,7 +30,7 @@
                         </ul>
                     </li>
                     <!-- second level menu - others -->
-                    <li><a href="/others" title="Others">Others</a>
+                    <li><a href="/menu/others" title="Others">Others</a>
                         <ul>
                             <li><a href="/breads" title="Breads">Breads</a></li>
                             <li><a href="/pizzas" title="Pizzas">Pizzas</a></li>

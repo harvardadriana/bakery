@@ -4,6 +4,6 @@
 $(document).ready(function() {
 
     // validate contact us form
-    $('#contactusform').validate();
+    $('#loginform').validate();
 
 });
