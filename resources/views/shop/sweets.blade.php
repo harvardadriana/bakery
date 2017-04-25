@@ -20,7 +20,7 @@
         <div id="side-menu" class="left">
             <h2>Side navigation</h2>
             <ul>
-                <li id="sweets"><a href="/menu/cakes"><span class="upper">Sweets</span></a>
+                <li id="sweets" class="active"><a href="/menu/sweets"><span class="upper">Sweets</span></a>
                     <ul class="subitems">
                         <li>Cakes</li>
                         <li>Cupcakes</li>
@@ -47,7 +47,7 @@
 
         <!-- CAKE GALLERY -->
         <div id="food-gallery" class="gallery right">
-            <h1>Our Cakes</h1>
+            <h1>Our Sweets</h1>
             <ul>
                 @if($menu->isEmpty())
                     No products found.

@@ -45,5 +45,5 @@
 	<!-- SCRIPTS RELEVANT FOR THIS PAGE ONLY -->
 	<!-- jquery validation CDN -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-	<script src="js/contactus.js"></script>
+	<script src="js/scripts.js"></script>
 @endpush

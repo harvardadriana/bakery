@@ -20,7 +20,7 @@
         <div id="side-menu" class="left">
             <h2>Side navigation</h2>
             <ul>
-                <li id="sweets"><a href="/menu/cakes"><span class="upper">Sweets</span></a>
+                <li id="sweets"><a href="/menu/sweets"><span class="upper">Sweets</span></a>
                     <ul class="subitems">
                         <li>Cakes</li>
                         <li>Cupcakes</li>
@@ -36,7 +36,7 @@
                         <li>Chicken wrap</li>
                     </ul>
                 </li>
-                <li id="others"><a href="/menu/others"><span class="upper">Others</span></a>
+                <li id="others" class="active"><a href="/menu/others"><span class="upper">Others</span></a>
                     <ul class="subitems">
                         <li>Breads</li>
                         <li>Pizzas</li>

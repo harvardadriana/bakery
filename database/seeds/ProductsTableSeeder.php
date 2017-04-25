@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Chocolate cake</p>',
 			'description' => '<p>Black Forest: layers of chocolate sponge cake with cherries, whipped cream, and more chocolate</p>',
             'price' => 9.99,
@@ -27,7 +27,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Coconut Cake</p>',
 			'description' => '<p>Cake with filling of coconuts and pineapple cream</p>',
             'price' => 9.99,
@@ -39,7 +39,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Oreo cake</p>',
 			'description' => '<p>Lots of oreo cookies, choc, and cherries</p>',
             'price' => 9.99,
@@ -51,7 +51,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Mushroom Cake</p>',
 			'description' => '<p>A cake with a bunch of mushrooms</p>',
             'price' => 9.99,
@@ -63,7 +63,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Choc Cherry Delight Cake</p>',
 			'description' => '<p>Chocolate and cherries</p>',
             'price' => 9.99,
@@ -75,7 +75,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Cherry Chocolate Cake</p>',
 			'description' => '<p>Old-fashioned cherry chocolate cake</p>',
             'price' => 9.99,
@@ -87,7 +87,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Piece of Heaven Cake</p>',
 			'description' => '<p>Our favorite</p>',
             'price' => 9.99,
@@ -99,7 +99,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Caramel Mud Cake</p>',
 			'description' => '<p>Delicious caramel cake with some toppings on it!</p>',
             'price' => 9.99,
@@ -111,7 +111,7 @@ class ProductsTableSeeder extends Seeder
         Product::insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'category' => 'cakes',
+			'category' => 'sweets',
 			'product_name' => '<p>Another Chocolate Cake</p>',
 			'description' => '<p>Pure and simple chocolate cake</p>',
             'price' => 9.99,

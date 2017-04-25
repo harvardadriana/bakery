@@ -95,9 +95,9 @@ Route::get('/menu/snacks', 'ShopController@snacks');
 
 
 /**
- * bakery/menu/cakes
+ * bakery/menu/sweets
  */
-Route::get('/menu/cakes', 'ShopController@cakes');
+Route::get('/menu/sweets', 'ShopController@sweets');
 
 
 /**
