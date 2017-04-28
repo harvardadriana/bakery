@@ -37,7 +37,7 @@ $(document).ready(function() {
 
         // Harvard Square
         var storeInfoHarvard = "<b>Harvard Square - Piece of Heaven Bakery</b><br/><br />" +
-            "<img src='images/stores-page/store-front.png' alt='Harvard Square Store Front' />";
+            "<img src='/images/stores-page/store-front.png' alt='Harvard Square Store Front' />";
 
         var storeInfoWindowHarvard = new google.maps.InfoWindow({
             content: storeInfoHarvard
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
         // Chelsea
         var storeInfoChelsea = "<b>Chelsea - Piece of Heaven Bakery</b><br/><br/>" + 
-            "<img src='images/stores-page/store-front2.png' alt='Chelsea Store Front' />";  
+            "<img src='/images/stores-page/store-front2.png' alt='Chelsea Store Front' />";  
 
         var storeInfoWindowChelsea = new google.maps.InfoWindow({
             content: storeInfoChelsea
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
         // Santa Monica
         var storeInfoSantaMonica = "<b>Santa Monica - Piece of Heaven Bakery</b><br/><br/>" + 
-            "<img src='images/stores-page/store-front3.png' alt='Santa Monica Store Front' />";  
+            "<img src='/images/stores-page/store-front3.png' alt='Santa Monica Store Front' />";  
 
         var storeInfoWindowSantaMonica = new google.maps.InfoWindow({
             content: storeInfoSantaMonica

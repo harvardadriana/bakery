@@ -63,7 +63,6 @@ if(App::environment('local')) {
 Route::get('/register', 'WelcomeController@register');
 
 
-
 /**
  * bakery/login/
  */
@@ -97,8 +96,8 @@ Route::get('/menu/snacks', 'ShopController@snacks');
 /**
  * bakery/menu/sweets
  */
-Route::get('/menu/sweets', 'ShopController@sweets');
-
+Route::get('/menu/sweets', 'ShopController@order');
+Route::post('/menu/sweets', 'ShopController@saveOrder');
 
 /**
  * bakery/

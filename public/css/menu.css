@@ -57,9 +57,12 @@
 }
 
 #food-gallery h1 {
+	width: 300px;
+	float: left;
 	color: #585858;
 	text-align: center;
-	padding-top: 20px;
+	margin-top: 15px;
+	margin-left: 220px;
 }
 
 #food-gallery ul {
@@ -81,11 +84,31 @@
 	color: #000;
 }
 
+#food-gallery label {
+	float: right;
+	padding-right: 5px;
+}
+
 #food-gallery p {
 	margin-bottom: 0;
 }
 
-#food-gallery button {
+#food-gallery input {
+	width: 25px;
 	float: right;
+}
+
+#food-gallery #submit {
+	float: right;
+	margin: 10px 20px 0 0;
 	width: 120px;
+	height: 50px;
+	background-color: #835F6D;
+	color: #fff;
+	font-size: 120%;
+	border-radius: 5px;
+}
+
+#food-gallery #submit:hover {
+	background-color: #DAB2BD;
 }

@@ -48,23 +48,33 @@
         <!-- CAKE GALLERY -->
         <div id="food-gallery" class="gallery right">
             <h1>Our Sweets</h1>
-            <ul>
-                @if($menu->isEmpty())
-                    No products found.
-                @else
-                    @foreach($menu as $product)
-                        <li><a href={!! $product['link'] !!}>
-                            {!! $product['image'] !!}
-                            {!! $product['product_name'] !!}</a>
-                            {!! $product['price'] !!}
-                            <button>Add to cart</button>
-                        </li>
-                    @endforeach
-                @endif
-                
-            </ul>
-        </div>
 
+            <form method='POST' action='/menu/sweets'>
+                {{ csrf_field() }}
+
+                <input id="submit" type='submit' value="Order" />
+
+                <ul>
+                    @if($menu->isEmpty())
+                        No products found.
+                    @else
+                        @foreach($menu as $key=>$product)
+                            <li>
+                                <a href={!! $product->link !!}>
+                                {!! $product->image !!}</a>
+                                {!! $product->product_name !!}
+                                ${!! $product->price !!}
+
+                                <input type="checkbox" name={{ ++$key }} {{ (++$key)  ? 'CHECKED' : '' }}/>
+                               <label for="add">Add</label>
+
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+            </form>
+
+        </div>
     </main>
 
 @endsection

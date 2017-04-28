@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Order;
 
 class ShopController extends Controller
 {
@@ -43,7 +44,7 @@ class ShopController extends Controller
     /**
      * bakery/menu/sweets
      */
-    public function sweets(Request $request) {
+    public function order(Request $request) {
 
         // returns all products in the menu
         $product = new Product();
@@ -53,6 +54,26 @@ class ShopController extends Controller
             'path' => 'menu',
             'menu' => $menu,
         ]);
+    }
+
+
+    /**
+     * bakery/menu/sweets
+     */
+    public function saveOrder(Request $request) {
+
+        $requestArray = $request->toArray();
+
+        // remove first element of the array: _token
+        $requestArray = array_except($requestArray, ['_token']);
+
+        $order = new Order();
+        $order->orders = serialize($requestArray);
+
+        dump($order);
+        //$order->save();
+        echo 'order saved';
+
     }
 
 
