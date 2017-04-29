@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
 
             $table->increments('order_id');
+            $table->timestamps();
             $table->string('orders');
         });
     }
@@ -28,7 +29,7 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('products');
+        Schema::drop('orders');
     }
 
 }

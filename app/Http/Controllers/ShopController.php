@@ -63,19 +63,28 @@ class ShopController extends Controller
     public function saveOrder(Request $request) {
 
         $requestArray = $request->toArray();
-
         // remove first element of the array: _token
         $requestArray = array_except($requestArray, ['_token']);
 
-        $order = new Order();
-        $order->orders = serialize($requestArray);
+        if(count($requestArray) != 0) {
 
-        dump($order);
-        //$order->save();
-        echo 'order saved';
+            $requestArray = json_encode($requestArray);
 
+            $order = new Order();
+            $order->orders = $requestArray;
+  
+            dump($order);
+
+            $order->save();
+            echo 'order saved';
+
+        }
+        else {
+
+            return redirect ('/menu/sweets');
+
+        }
     }
-
 
     /**
      * menu data
