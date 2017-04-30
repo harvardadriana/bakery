@@ -42,7 +42,7 @@ class ShopController extends Controller
 
 
     /**
-     * bakery/menu/sweets
+     * bakery/menu/sweets - GET
      */
     public function order(Request $request) {
 
@@ -58,7 +58,7 @@ class ShopController extends Controller
 
 
     /**
-     * bakery/menu/sweets
+     * bakery/menu/sweets  - POST
      */
     public function saveOrder(Request $request) {
 
@@ -68,11 +68,12 @@ class ShopController extends Controller
 
         if(count($requestArray) != 0) {
 
+            // convert Array to String to save in DB
             $requestArray = json_encode($requestArray);
 
             $order = new Order();
             $order->orders = $requestArray;
-  
+
             dump($order);
 
             $order->save();
@@ -80,9 +81,7 @@ class ShopController extends Controller
 
         }
         else {
-
             return redirect ('/menu/sweets');
-
         }
     }
 
