@@ -40,7 +40,14 @@
             </li>
             <li class="navstores"><a href="/stores" title="Stores">Stores</a></li>
             <li class="navcontact"><a href="/contact" title="Contact us">Contact us</a></li>
-            <li class="navlogin"><a href="/login" title="Login">Login</a></li>
+            <li class="navlogin">
+                <form method='POST' id='logout' action='/logout'>
+                    {{csrf_field()}}
+                    <a href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
+                </form>
+            </li>
+
+
         </ul>
     </nav>
 </header>

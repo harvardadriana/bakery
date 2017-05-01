@@ -102,4 +102,24 @@ Route::post('/menu/sweets', 'ShopController@saveOrder');
 /**
  * bakery/
  */
-Route::get('/', 'WelcomeController@welcome');
+Route::get('/', 'WelcomeController@index');
+
+
+Auth::routes();
+
+Route::get('/home', 'WelcomeController@index')->name('home');
+
+
+
+Route::get('/show-login-status', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user)
+        dump('You are logged in.', $user->toArray());
+    else
+        dump('You are not logged in.');
+
+    return;
+});

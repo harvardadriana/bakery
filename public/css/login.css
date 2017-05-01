@@ -66,8 +66,9 @@ p input:hover {
 }
 
 .required {
-	font-size: 70%;
+	font-size: 80%;
 	font-style: italic;
+	color: red;
 }
 
 /* error messages */
