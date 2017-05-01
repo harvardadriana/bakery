@@ -65,7 +65,7 @@
                                 {!! $product->product_name !!}
                                 ${!! $product->price !!}
  
-                                <label><input type="checkbox" name={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }}/>Add</label>
+                                <label><input type="checkbox" name={{ ++$key }} value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }}/>Add</label>
 
                             </li>
                         @endforeach

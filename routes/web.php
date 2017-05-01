@@ -61,7 +61,7 @@ if(App::environment('local')) {
  * bakery/register/
  */
 Route::get('/register', 'WelcomeController@register');
-
+Route::post('/register', 'WelcomeController@addUser');
 
 /**
  * bakery/login/
