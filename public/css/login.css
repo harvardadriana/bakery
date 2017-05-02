@@ -5,14 +5,15 @@ main {
 	background: url('../images/login-page/cupcakes.png') no-repeat;
 	background-size: cover;
 	width: 1045px;
-	height: 580px;
+	height: 600px;
 	overflow: auto;
 }
 
 #form-wrapper {
 	width: 70%;
 	margin: 0 auto;
-	margin-top: 70px;
+	margin-top: 60px;
+	margin-bottom: 60px;
 	background-color: rgba(242, 242, 242, 0.5);
 	border: 1px solid rgba(242, 242, 242, 0.5);
 	border-radius: 15px;
@@ -24,34 +25,38 @@ main {
 	color: #3d3d3d;
 }
 
-fieldset {
-	color: #000;
-	border: none;
-	margin-bottom: 20px;
-}
-
-#loginform ul li {
+#myForm ul li {
 	padding-top: 15px;
 }
 
-#loginform li input, 
-label {
+#myForm li input, 
+#myForm li label {
 	display: block;
-	width: 300px;
+	width: 400px;
 	height: 30px;
 	margin: 0 auto;
 	font-size: 18px;
 	border-radius: 5px;
 }
 
-label {
+#myForm label {
 	text-align: left;
 }
 
+#myForm input[type="checkbox"] {
+	width: 20px;
+}
+
+#myForm input+label,
+#myForm input[type="checkbox"] {
+	display: inline;
+}
+
 /* submit button */
-p input {
-	display: block;
+#myForm button {
 	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
 	width: 160px;
 	height: 50px;
 	background-color: #835F6D;
@@ -60,28 +65,24 @@ p input {
 	border-radius: 5px;
 }
 
-p input:hover {
-	background-color: #fff;
-	color: #835F6D;
+#myForm button:hover {
+	background-color: #E9C4CB;
+	color: #000;
+}
+
+p {
+	margin-bottom: 5px;
 }
 
 .required {
 	font-size: 80%;
 	font-style: italic;
 	color: red;
+	margin-left: 5px;
 }
 
-/* error messages */
-label#password-error.error, 
-label#email-error.error {
-	background-image: url("../images/red_x.gif");
-	background-repeat: no-repeat;
-	margin: 0 auto;
+.infoMessage {
 	margin-top: 15px;
-	width: 230px;
-	color: red;
-	font-style: italic;
-	text-align: center;
 }
 
 /* footer */

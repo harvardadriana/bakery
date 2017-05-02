@@ -1,5 +1,18 @@
 <?php
 
+Route::get('/show-login-status', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user)
+        dump('You are logged in.', $user->toArray());
+    else
+        dump('You are not logged in.');
+
+    return;
+});
+
 /**
  * debugging/testing tools - LOCAL ENVIRONMENT ONLY
  */
@@ -58,18 +71,6 @@ if(App::environment('local')) {
 
 
 /**
- * bakery/register/
- */
-Route::get('/register', 'WelcomeController@register');
-Route::post('/register', 'WelcomeController@addUser');
-
-/**
- * bakery/login/
- */
-Route::get('/login', 'WelcomeController@login');
-
-
-/**
  * bakery/contact/
  */
 Route::get('/contact', 'WelcomeController@contact');
@@ -94,9 +95,19 @@ Route::get('/menu/snacks', 'ShopController@snacks');
 
 
 /**
+ * bakery/orders/{id?}  - Show single order
+ */
+Route::get('/orders/{id?}', 'ShopController@viewOrder');
+
+
+/**
  * bakery/menu/sweets
  */
-Route::get('/menu/sweets', 'ShopController@order');
+Route::get('/menu/sweets', 'ShopController@displayMenu');
+#Route::post('/menu/sweets', [
+#    'middleware' => 'auth',
+#    'uses' => 'ShopController@saveOrder'
+#]);
 Route::post('/menu/sweets', 'ShopController@saveOrder');
 
 /**
@@ -110,16 +121,3 @@ Auth::routes();
 Route::get('/home', 'WelcomeController@index')->name('home');
 
 
-
-Route::get('/show-login-status', function() {
-
-    # You may access the authenticated user via the Auth facade
-    $user = Auth::user();
-
-    if($user)
-        dump('You are logged in.', $user->toArray());
-    else
-        dump('You are not logged in.');
-
-    return;
-});

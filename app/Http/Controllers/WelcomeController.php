@@ -7,19 +7,6 @@ use Illuminate\Http\Request;
 class WelcomeController extends Controller
 {
 
-    /**
-     * bakery/login/
-     */
-    public function login(Request $request) {
-        // check url path
-        $path = $request->path();
-
-        return view('users.login')->with([
-            'path' => $path,
-        ]); 
-    }
-
-
 	/*
      * bakery/contact
      */
