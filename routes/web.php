@@ -1,5 +1,17 @@
 <?php
 
+	/**
+	 * /drop
+	 */
+    Route::get('/drop', function() {
+
+        DB::statement('DROP database bakery');
+        DB::statement('CREATE database bakery');
+
+        return 'Dropped bakery; created bakery.';
+    });
+
+    
 Route::get('/show-login-status', function() {
 
     # You may access the authenticated user via the Auth facade
@@ -18,16 +30,7 @@ Route::get('/show-login-status', function() {
  */
 if(App::environment('local')) {
 
-	/**
-	 * /drop
-	 */
-    Route::get('/drop', function() {
 
-        DB::statement('DROP database bakery');
-        DB::statement('CREATE database bakery');
-
-        return 'Dropped bakery; created bakery.';
-    });
 
 	/**
 	 * /logs - Log viewer
