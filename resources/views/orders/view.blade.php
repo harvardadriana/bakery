@@ -8,24 +8,46 @@
 
 @push('head')
 
-	<link href="/css/stores.css" rel="stylesheet" />
-    
+	<link href="/css/view.css" rel="stylesheet" />
+
 @endpush
 
 @section('main')
 
-        @if(Session::get('message') != null)
-            <div class='message'>
-            	{{ Session::get('message') }}
-            </div>
-        @endif
+    @if(Session::get('message') != null)
+        <div class='message'>
+        	{{ Session::get('message') }}
+        </div>
+    @endif
 
-	<h1>Your order has been placed. Order Number: {{ $id }}</h1>
+	<table>
+		<caption>Order Number: {{ $id }}</caption>
 
-	@foreach($products as $product)
-		
-		{{ $product }} <br/><br/>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Product Name</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>	
+		</thead>
 
-	@endforeach
+		<tbody>
+			@foreach($arrayProductsList as $products=>$product) 
+				@foreach($product as $p)
+					<tr>
+						<td>{!! $p->image !!}</td>
+						<td>{!! $p->product_name !!}</td>
+						<td>1</td>
+						<td>{!! $p->price !!}</td>						
+					</tr>
+				@endforeach
+			@endforeach
+		</tbody>
+	</table>
+
+	<div id="total">
+		<p>Total: {{ $totalPrice }}</p>
+	</div>
 
 @endsection

@@ -62,29 +62,40 @@ class ShopController extends Controller
      */
     public function viewOrder($id) {
 
-        // find order
-        $order = Order::find($id);
+        // find order that matches id
+        $orderId = Order::find($id);
    
-        if(!$order) {
+        if(!$orderId) {
             Session::flash('message', 'No order found.');
             return redirect('/');
         }
 
-        // convert string to array
-        $orders = json_decode($order->orders);
+        // get orders and convert string to array
+        $arrayOrderList = json_decode($orderId->orders);
 
-        foreach($orders as $key=>$order) {
+        // match items in Order List to find equivalent Products
+        foreach($arrayOrderList as $key=>$products_id) {
 
-            $products[$key] = Product::where('product_id', '=', $order)->get();
-
+            // save products found in array
+            $arrayProductsList[$key] = Product::where('product_id', '=', $products_id)->get();
         }
 
-        dump($products);
+        // calculate total price
+        $totalPrice = 0;
+        foreach($arrayProductsList as $products=>$product) {
+            foreach($product as $p) {
+
+                $price = $p->price;
+                $totalPrice += $price;
+
+            }
+        }
        
         return view('orders.view')->with([
             'path' => '',
             'id' => $id,
-            'products' => $products,
+            'arrayProductsList' => $arrayProductsList,
+            'totalPrice' => $totalPrice,
         ]);
     }
 

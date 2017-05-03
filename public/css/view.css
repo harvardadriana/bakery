@@ -1,0 +1,32 @@
+/*  view.css  */
+
+
+table {
+	width: 90%;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+caption {
+	margin: 40px 0 20px;
+	font-size: 160%;
+	text-align: left;
+}
+
+th {
+	text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #EFF0F1;
+}
+
+img {
+	width: 100px;
+}
+
+#total p {
+	font-size: 160%;
+	text-align: right;
+	margin-right: 150px;
+}
