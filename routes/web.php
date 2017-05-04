@@ -1,17 +1,43 @@
 <?php
 
+
+Route::group(['middleware' => 'auth'], function () {
+
 	/**
-	 * /drop
+	 * bakery/orders/
 	 */
-    Route::get('/drop', function() {
+	Route::get('/orders/{id}', 'ShopController@viewOrder');
+	Route::get('/orders', 'ShopController@viewAllOrders');
 
-        DB::statement('DROP database bakery');
-        DB::statement('CREATE database bakery');
+});
 
-        return 'Dropped bakery; created bakery.';
-    });
 
-    
+/**
+ * bakery/menu/sweets/
+ */
+Route::get('/menu/sweets', 'ShopController@displayMenuSweets');
+Route::post('/menu/sweets', 'ShopController@saveOrder');
+
+
+/**
+ * bakery/
+ */
+Auth::routes();
+Route::get('/home', 'WelcomeController@index')->name('home');
+Route::get('/', 'WelcomeController@index');
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/show-login-status', function() {
 
     # You may access the authenticated user via the Auth facade
@@ -30,7 +56,16 @@ Route::get('/show-login-status', function() {
  */
 if(App::environment('local')) {
 
+	/**
+	 * /drop
+	 */
+    Route::get('/drop', function() {
 
+        DB::statement('DROP database bakery');
+        DB::statement('CREATE database bakery');
+
+        return 'Dropped bakery; created bakery.';
+    });
 
 	/**
 	 * /logs - Log viewer
@@ -95,32 +130,4 @@ Route::get('/menu/others', 'ShopController@others');
  * bakery/menu/snacks
  */
 Route::get('/menu/snacks', 'ShopController@snacks');
-
-
-/**
- * bakery/orders/{id?}  - Show single order
- */
-Route::get('/orders/{id?}', 'ShopController@viewOrder');
-
-
-/**
- * bakery/menu/sweets
- */
-Route::get('/menu/sweets', 'ShopController@displayMenu');
-#Route::post('/menu/sweets', [
-#    'middleware' => 'auth',
-#    'uses' => 'ShopController@saveOrder'
-#]);
-Route::post('/menu/sweets', 'ShopController@saveOrder');
-
-/**
- * bakery/
- */
-Route::get('/', 'WelcomeController@index');
-
-
-Auth::routes();
-
-Route::get('/home', 'WelcomeController@index')->name('home');
-
 

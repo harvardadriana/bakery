@@ -5,60 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
+use App\User;
 use Session;
 
 class ShopController extends Controller
 {
 
     /**
-     * bakery/menu/sweets/ - GET
-     */
-    public function displayMenu(Request $request) {
-        
-        // returns all products in the menu
-        $product = new Product();
-        $menu = $product->where('category', 'LIKE', 'sweets')->get();
-
-        return view('menu.sweets')->with([
-            'path' => 'menu',
-            'menu' => $menu,
-        ]);
-    }
-
-
-    /**
-     * bakery/menu/sweets/  - POST
-     */
-    public function saveOrder(Request $request) {
-
-        if(count($request->order) != 0) {
-
-            // convert Array to String for saving in DB
-            $requestArray = json_encode($request->order);
-
-            // create new order
-            $order = new Order();
-            $order->orders = $requestArray;
-
-            // save new order in DB
-            $order->save();
-
-            Session::flash('message', 'Your order has been placed.');
-
-            return redirect ('/orders/'.$order->id)->with([
-                'order' => $order,
-            ]);
-
-        }
-        else {
-
-            return redirect ('/menu/sweets');
-
-        }
-    }
-
-    /**
-     * bakery/orders/{id?}
+     * bakery/orders/{id}   - GET
      */
     public function viewOrder($id) {
 
@@ -67,7 +21,7 @@ class ShopController extends Controller
    
         if(!$orderId) {
             Session::flash('message', 'No order found.');
-            return redirect('/');
+            return redirect('/orders');
         }
 
         // get orders and convert string to array
@@ -91,7 +45,7 @@ class ShopController extends Controller
             }
         }
        
-        return view('orders.view')->with([
+        return view('orders.vieworder')->with([
             'path' => '',
             'id' => $id,
             'arrayProductsList' => $arrayProductsList,
@@ -101,24 +55,86 @@ class ShopController extends Controller
 
 
     /**
-     * bakery/orders/
+     * bakery/orders/   - GET
      */
-    public function viewAllOrder() {
+    public function viewAllOrders() {
 
         //$order = Order::find($id);
 
-        return view('orders.view')->with([
-            'path' => '',
+        return view('orders.viewallorders')->with([
+            'path' => 'orders',
         ]);
     }
 
 
     /**
-     * menu data
+     * bakery/menu/sweets/ - GET
      */
-    public function __invoke() {
+    public function displayMenuSweets(Request $request) {
+        
+        // returns all products in the menu
+        $product = new Product();
+        $menu = $product->where('category', 'LIKE', 'sweets')->get();
 
+        return view('menu.sweets')->with([
+            'path' => 'menu',
+            'menu' => $menu,
+        ]);
     }
+
+
+    /**
+     * bakery/menu/sweets/  - POST
+     */
+    public function saveOrder(Request $request) {
+
+        if(count($request->order) != 0) {
+
+            $user = $request->user();
+
+            if(!$user) {
+                Session::flash('message', 'You need to login to place an order.');
+                return redirect('/menu/sweets');
+            }
+
+            // create new order
+            $order = new Order();
+
+            // convert Array to String for saving in DB
+            // save the selected products in the new order
+            $order->orders = json_encode($request->order);
+            $user = $request->user();
+            $order->user_id = $user->id;
+
+            // save new order in DB
+            $order->save();
+
+            Session::flash('message', 'Your order has been placed.');
+
+            return redirect ('/orders/'.$order->id);
+
+        }
+        else {
+
+            return redirect ('/menu/sweets');
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * bakery/menu/others
@@ -129,7 +145,7 @@ class ShopController extends Controller
         $product = new Product();
         $menu = $product->where('category', 'LIKE', 'others')->get();
 
-        return view('shop.others')->with([
+        return view('menu.others')->with([
             'path' => 'menu',
             'menu' => $menu,
         ]);
@@ -145,7 +161,7 @@ class ShopController extends Controller
         $product = new Product();
         $menu = $product->where('category', 'LIKE', 'snacks')->get();
 
-        return view('shop.snacks')->with([
+        return view('menu.snacks')->with([
             'path' => 'menu',
             'menu' => $menu,
         ]);

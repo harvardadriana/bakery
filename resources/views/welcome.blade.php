@@ -15,7 +15,7 @@
 @section('main')
 
     <main>
-
+    
         <!-- IMAGE SLIDER -->
         <div id="imageSlider">
             <ul>

@@ -16,6 +16,12 @@
 
     <main>
 
+        @if(Session::get('message') != null)
+            <div class='message'>
+                {{ Session::get('message') }}
+            </div>
+        @endif
+    
         <!-- SIDE NAVIGATION -->
         <div id="side-menu" class="left">
             <h2>Side navigation</h2>

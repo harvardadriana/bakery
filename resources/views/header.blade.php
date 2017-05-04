@@ -41,9 +41,9 @@
                         </li>
                     </ul>
                 </li>
+                <li class="navorders"><a href="/orders" title="Orders">Orders</a></li>
                 <li class="navstores"><a href="/stores" title="Stores">Stores</a></li>
-                <li class="navcontact"><a href="/contact" title="Contact us">Contact us</a></li>
-                <li class="navlogin">
+                <li class="navlogout">
                     <form method='POST' id='logout' action='/logout'>
                         {{csrf_field()}}
                         <a href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
