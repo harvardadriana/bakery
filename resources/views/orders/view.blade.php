@@ -33,15 +33,13 @@
 		</thead>
 
 		<tbody>
-			@foreach($arrayProductsList as $products=>$product) 
-				@foreach($product as $p)
-					<tr>
-						<td>{!! $p->image !!}</td>
-						<td>{!! $p->product_name !!}</td>
-						<td>1</td>
-						<td>{!! $p->price !!}</td>						
-					</tr>
-				@endforeach
+			@foreach($productsArray as $product) 
+				<tr>
+					<td>{!! $product->image !!}</td>
+					<td>{!! $product->product_name !!}</td>
+					<td>1</td>
+					<td>{!! $product->price !!}</td>						
+				</tr>
 			@endforeach
 		</tbody>
 	</table>

@@ -26,12 +26,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * RELASHIONSHIP BETWEEN USER AND ORDERS
-     */
-    public function orders() {
-        return $this->hasMany('App\Order');
-    }
     
 }

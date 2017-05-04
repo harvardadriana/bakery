@@ -6,8 +6,9 @@ Route::group(['middleware' => 'auth'], function () {
 	/**
 	 * bakery/orders/
 	 */
-	Route::get('/orders/{id}', 'ShopController@viewOrder');
 	Route::get('/orders', 'ShopController@viewAllOrders');
+	Route::get('/orders/{id}', 'ShopController@viewOrder');
+	Route::get('/orders/delete/{id}', 'ShopController@deleteOrder');
 
 });
 
@@ -15,7 +16,7 @@ Route::group(['middleware' => 'auth'], function () {
 /**
  * bakery/menu/sweets/
  */
-Route::get('/menu/sweets', 'ShopController@displayMenuSweets');
+Route::get('/menu/sweets', 'ShopController@showMenu');
 Route::post('/menu/sweets', 'ShopController@saveOrder');
 
 

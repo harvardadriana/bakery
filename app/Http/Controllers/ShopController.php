@@ -6,53 +6,11 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
 use App\User;
+use App\OrderProductTableSeeder;
 use Session;
 
 class ShopController extends Controller
 {
-
-    /**
-     * bakery/orders/{id}   - GET
-     */
-    public function viewOrder($id) {
-
-        // find order that matches id
-        $orderId = Order::find($id);
-   
-        if(!$orderId) {
-            Session::flash('message', 'No order found.');
-            return redirect('/orders');
-        }
-
-        // get orders and convert string to array
-        $arrayOrderList = json_decode($orderId->orders);
-
-        // match items in Order List to find equivalent Products
-        foreach($arrayOrderList as $key=>$products_id) {
-
-            // save products found in array
-            $arrayProductsList[$key] = Product::where('product_id', '=', $products_id)->get();
-        }
-
-        // calculate total price
-        $totalPrice = 0;
-        foreach($arrayProductsList as $products=>$product) {
-            foreach($product as $p) {
-
-                $price = $p->price;
-                $totalPrice += $price;
-
-            }
-        }
-       
-        return view('orders.vieworder')->with([
-            'path' => '',
-            'id' => $id,
-            'arrayProductsList' => $arrayProductsList,
-            'totalPrice' => $totalPrice,
-        ]);
-    }
-
 
     /**
      * bakery/orders/   - GET
@@ -61,7 +19,54 @@ class ShopController extends Controller
 
         //$order = Order::find($id);
 
-        return view('orders.viewallorders')->with([
+        return view('orders.viewall')->with([
+            'path' => 'orders',
+        ]);
+    }
+
+
+    /**
+     * bakery/orders/{id}   - GET
+     */
+    public function viewOrder($id) {
+
+        // find order that matches id
+        $order = Order::with('products')->find($id);
+
+        if(!$order) {
+            Session::flash('message', 'No order found.');
+            return redirect('/orders');
+        }
+
+        $productsArray = [];
+        $totalPrice = 0;
+
+        foreach($order->products as $product) {
+
+            // get each product related to this order
+            $productsArray[] = $product;
+
+            // calculate total price
+            $totalPrice += $product->price;
+        }
+       
+        return view('orders.view')->with([
+            'path' => '',
+            'id' => $id,
+            'productsArray' => $productsArray,
+            'totalPrice' => $totalPrice,
+        ]);
+    }
+
+
+    /**
+     * bakery/orders/delete/{id}   - DELETE
+     */
+    public function deleteOrder() {
+
+        //$order = Order::find($id);
+
+        return view('orders.viewall')->with([
             'path' => 'orders',
         ]);
     }
@@ -70,11 +75,10 @@ class ShopController extends Controller
     /**
      * bakery/menu/sweets/ - GET
      */
-    public function displayMenuSweets(Request $request) {
+    public function showMenu(Request $request) {
         
-        // returns all products in the menu
-        $product = new Product();
-        $menu = $product->where('category', 'LIKE', 'sweets')->get();
+        // returns all products in that category to populate the menu
+        $menu = Product::where('category', 'LIKE', 'sweets')->get();
 
         return view('menu.sweets')->with([
             'path' => 'menu',
@@ -90,6 +94,7 @@ class ShopController extends Controller
 
         if(count($request->order) != 0) {
 
+            // check if user is logged
             $user = $request->user();
 
             if(!$user) {
@@ -99,15 +104,18 @@ class ShopController extends Controller
 
             // create new order
             $order = new Order();
-
-            // convert Array to String for saving in DB
-            // save the selected products in the new order
-            $order->orders = json_encode($request->order);
-            $user = $request->user();
-            $order->user_id = $user->id;
-
-            // save new order in DB
+            $order->user_id = $request->user()->id;
             $order->save();
+
+            // get the selected products from user
+            $selectedProducts = $request->order;
+
+            foreach($selectedProducts as $product_id) {
+
+                $product = Product::where('id', 'LIKE', $product_id)->first();
+                $order->products()->save($product);
+
+            }
 
             Session::flash('message', 'Your order has been placed.');
 
@@ -141,9 +149,8 @@ class ShopController extends Controller
      */
     public function others(Request $request) {
 
-        // returns all products in the menu
-        $product = new Product();
-        $menu = $product->where('category', 'LIKE', 'others')->get();
+        // returns all products in that category to populate the menu
+        $menu = Product::where('category', 'LIKE', 'others')->get();
 
         return view('menu.others')->with([
             'path' => 'menu',
@@ -157,9 +164,8 @@ class ShopController extends Controller
      */
     public function snacks(Request $request) {
 
-        // returns all products in the menu
-        $product = new Product();
-        $menu = $product->where('category', 'LIKE', 'snacks')->get();
+        // returns all products in that category to populate the menu
+        $menu = Product::where('category', 'LIKE', 'snacks')->get();
 
         return view('menu.snacks')->with([
             'path' => 'menu',
