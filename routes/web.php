@@ -8,7 +8,8 @@ Route::group(['middleware' => 'auth'], function () {
 	 */
 	Route::get('/orders', 'ShopController@viewAllOrders');
 	Route::get('/orders/{id}', 'ShopController@viewOrder');
-	Route::get('/orders/delete/{id}', 'ShopController@deleteOrder');
+	Route::get('/orders/delete/{id}', 'ShopController@delete');
+	Route::post('/orders/delete', 'ShopController@deleteOrder');
 
 });
 

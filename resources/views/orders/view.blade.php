@@ -2,7 +2,7 @@
 
 @section('title')
 
-    Piece of Heaven Bakery - Order
+    Piece of Heaven Bakery - Order View
     
 @endsection
 
@@ -20,8 +20,9 @@
         </div>
     @endif
 
+	<h1>Order number: {{ $id }}</h1>
+
 	<table>
-		<caption>Order Number: {{ $id }}</caption>
 
 		<thead>
 			<tr>

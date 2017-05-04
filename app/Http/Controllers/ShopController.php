@@ -17,7 +17,7 @@ class ShopController extends Controller
      */
     public function viewAllOrders() {
 
-        //$order = Order::find($id);
+        // TODO ...
 
         return view('orders.viewall')->with([
             'path' => 'orders',
@@ -51,7 +51,7 @@ class ShopController extends Controller
         }
        
         return view('orders.view')->with([
-            'path' => '',
+            'path' => 'orders',
             'id' => $id,
             'productsArray' => $productsArray,
             'totalPrice' => $totalPrice,
@@ -60,15 +60,60 @@ class ShopController extends Controller
 
 
     /**
-     * bakery/orders/delete/{id}   - DELETE
+     * bakery/orders/delete/{id}   - GET
      */
-    public function deleteOrder() {
+    public function delete($id) {
 
-        //$order = Order::find($id);
+        // find order that matches id
+        $order = Order::with('products')->find($id);
 
-        return view('orders.viewall')->with([
+        if(!$order) {
+            Session::flash('message', 'No order found.');
+            return redirect('/orders');
+        }
+
+        $productsArray = [];
+        $totalPrice = 0;
+
+        foreach($order->products as $product) {
+
+            // get each product related to this order
+            $productsArray[] = $product;
+
+            // calculate total price
+            $totalPrice += $product->price;
+        }
+       
+        return view('orders.delete')->with([
             'path' => 'orders',
+            'id' => $id,
+            'productsArray' => $productsArray,
+            'totalPrice' => $totalPrice,
         ]);
+
+    }
+
+
+    /**
+     * bakery/orders/delete/   - POST
+     */
+    public function deleteOrder(Request $request) {
+
+        // find order that matches id
+        $order = Order::find($request->id);
+
+        if(!$order) {
+            Session::flash('message', 'Order could not be found.');
+            return redirect('/orders');
+        }
+        
+        $order->products()->detach();
+        $order->delete();
+
+        Session::flash('message', 'Your order has been deleted');
+
+        return redirect('/orders');
+
     }
 
 
