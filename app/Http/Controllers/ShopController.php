@@ -27,15 +27,23 @@ class ShopController extends Controller
 
         // get orders related to this user
         $orders_list_db = Order::where('user_id', '=', $userId)->with('products')->get()->toArray();
-        $user_name = $request->user()->name;
 
-        $ordersList;
+        if($orders_list_db) {
 
-        foreach($orders_list_db as $list) {
+            $ordersList;
 
-            $ordersList[] = $list['products'];
+            foreach($orders_list_db as $list) {
+
+                $ordersList[] = $list['products'];
+
+            }
 
         }
+        else {
+            $ordersList = [];
+        }
+
+        $user_name = $request->user()->name;
 
         return view('orders.viewall')->with([
 

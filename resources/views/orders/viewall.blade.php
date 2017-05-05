@@ -22,38 +22,46 @@
 	        </div>
 	    @endif
 
-		<h1>View all orders of {{ $user_name }} </h1>
+		@if($ordersList)
 
-		@foreach($ordersList as $products)
+			<h1>View all orders of {{ $user_name }} </h1>
 
-		 	<table>
-			
-				<caption>Order number: {{ $products[0]['pivot']['order_id'] }}</caption>
+			@foreach($ordersList as $products)
 
-				<thead>
-					<tr>
-						<th></th>
-						<th>Product Name</th>
-						<th>Quantity</th>
-						<th>Price</th>
-					</tr>	
-				</thead>
+			 	<table>
+				
+					<caption>Order number: {{ $products[0]['pivot']['order_id'] }}</caption>
 
-				<tbody>
-
-					@foreach($products as $product)
+					<thead>
 						<tr>
-							<td>{!! $product['image'] !!}</td>
-							<td>{!! $product['product_name'] !!}</td>
-							<td>1</td>
-							<td>{{ $product['price'] }}</td>
-						</tr>
-					@endforeach
+							<th></th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+						</tr>	
+					</thead>
 
-				</tbody>
-			</table>
+					<tbody>
 
-		@endforeach
+						@foreach($products as $product)
+							<tr>
+								<td>{!! $product['image'] !!}</td>
+								<td>{!! $product['product_name'] !!}</td>
+								<td>1</td>
+								<td>{{ $product['price'] }}</td>
+							</tr>
+						@endforeach
+
+					</tbody>
+				</table>
+
+			@endforeach
+
+		@else
+
+			<h1>You have no orders.</h1>
+
+		@endif
 
 	</main>
 
