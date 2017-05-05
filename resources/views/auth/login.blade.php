@@ -38,9 +38,10 @@
                         <label for="remember">Remember Me</label>
                     </li>
 
-                    <button type="submit">Login</button>
-
                 </ul>
+
+                <button type="submit">Login</button>
+
             </form>
 
             <p>New to Piece of Heaven Bakery&#63; Register <a href='/register'>here</a></p>

@@ -14,39 +14,43 @@
 
 @section('main')
 
-    @if(Session::get('message') != null)
-        <div class='message'>
-        	{{ Session::get('message') }}
-        </div>
-    @endif
+    <main>
 
-	<h1>Order number: {{ $id }}</h1>
+	    @if(Session::get('message') != null)
+	        <div class='message'>
+	        	{{ Session::get('message') }}
+	        </div>
+	    @endif
 
-	<table>
+		<h1>Order number: {{ $id }} for {{ $userName }}</h1>
 
-		<thead>
-			<tr>
-				<th></th>
-				<th>Product Name</th>
-				<th>Quantity</th>
-				<th>Price</th>
-			</tr>	
-		</thead>
+		<table>
 
-		<tbody>
-			@foreach($productsArray as $product) 
+			<thead>
 				<tr>
-					<td>{!! $product->image !!}</td>
-					<td>{!! $product->product_name !!}</td>
-					<td>1</td>
-					<td>{!! $product->price !!}</td>						
-				</tr>
-			@endforeach
-		</tbody>
-	</table>
+					<th></th>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>	
+			</thead>
 
-	<div id="total">
-		<p>Total: {{ $totalPrice }}</p>
-	</div>
+			<tbody>
+				@foreach($productsArray as $product) 
+					<tr>
+						<td>{!! $product->image !!}</td>
+						<td>{!! $product->product_name !!}</td>
+						<td>1</td>
+						<td>{!! $product->price !!}</td>
+					</tr>
+				@endforeach
+			</tbody>
+		</table>
+
+		<div id="total">
+			<p>Total: {{ $totalPrice }}</p>
+		</div>
+		
+	</main>
 
 @endsection

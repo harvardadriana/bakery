@@ -38,6 +38,9 @@ class ShopController extends Controller
             return redirect('/orders');
         }
 
+        // get user's name
+        $user = User::find($order->user_id)->pluck('name')->first();
+
         $productsArray = [];
         $totalPrice = 0;
 
@@ -55,6 +58,7 @@ class ShopController extends Controller
             'id' => $id,
             'productsArray' => $productsArray,
             'totalPrice' => $totalPrice,
+            'userName' => $userName,
         ]);
     }
 
@@ -103,7 +107,7 @@ class ShopController extends Controller
         $order = Order::find($request->id);
 
         if(!$order) {
-            Session::flash('message', 'Order could not be found.');
+            Session::flash('message', 'No order found.');
             return redirect('/orders');
         }
         

@@ -14,46 +14,50 @@
 
 @section('main')
 
-    @if(Session::get('message') != null)
-        <div class='message'>
-        	{{ Session::get('message') }}
-        </div>
-    @endif
+	<main>
 
-    <form method='POST' action='/orders/delete'>
-        {{ csrf_field() }}
+	    @if(Session::get('message') != null)
+	        <div class='message'>
+	        	{{ Session::get('message') }}
+	        </div>
+	    @endif
 
-		<h1>Delete Order number {{ $id }} &#63;</h1>
+	    <form method='POST' action='/orders/delete'>
+	        {{ csrf_field() }}
 
-		<input type="hidden" name="id" value="{{ $id }}" /> 
-		<input type='submit' value='Delete order&#63;' />
+			<h1>Delete Order number {{ $id }} &#63;</h1>
 
-		<table>
-			<thead>
-				<tr>
-					<th></th>
-					<th>Product Name</th>
-					<th>Quantity</th>
-					<th>Price</th>
-				</tr>	
-			</thead>
+			<input type="hidden" name="id" value="{{ $id }}" /> 
+			<input type='submit' value='Delete order&#63;' />
 
-			<tbody>
-				@foreach($productsArray as $product) 
+			<table>
+				<thead>
 					<tr>
-						<td>{!! $product->image !!}</td>
-						<td>{!! $product->product_name !!}</td>
-						<td>1</td>
-						<td>{!! $product->price !!}</td>						
-					</tr>
-				@endforeach
-			</tbody>
-		</table>
+						<th></th>
+						<th>Product Name</th>
+						<th>Quantity</th>
+						<th>Price</th>
+					</tr>	
+				</thead>
 
-		<div id="total">
-			<p>Total: {{ $totalPrice }}</p>
-		</div>
+				<tbody>
+					@foreach($productsArray as $product) 
+						<tr>
+							<td>{!! $product->image !!}</td>
+							<td>{!! $product->product_name !!}</td>
+							<td>1</td>
+							<td>{!! $product->price !!}</td>						
+						</tr>
+					@endforeach
+				</tbody>
+			</table>
 
-	</form>
+			<div id="total">
+				<p>Total: {{ $totalPrice }}</p>
+			</div>
+
+		</form>
+	
+	</main>
 
 @endsection

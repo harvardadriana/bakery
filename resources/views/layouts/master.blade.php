@@ -26,7 +26,7 @@
 
     </head>
 
-        <body class= {{ $path or '' }} >
+        <body class= {{ $path or 'none' }} >
 
         @include('header')
 

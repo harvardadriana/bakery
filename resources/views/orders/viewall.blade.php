@@ -14,12 +14,16 @@
 
 @section('main')
 
-    @if(Session::get('message') != null)
-        <div class='message'>
-        	{{ Session::get('message') }}
-        </div>
-    @endif
+	<main>
 
-	<h1>View all orders...</h1>
+	    @if(Session::get('message') != null)
+	        <div class='message'>
+	        	{{ Session::get('message') }}
+	        </div>
+	    @endif
+
+		<h1>View all orders...</h1>
+		
+	</main>
 
 @endsection
