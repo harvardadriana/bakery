@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
 use App\User;
-use App\OrderProductTableSeeder;
 use Session;
 
 class ShopController extends Controller
@@ -15,12 +14,35 @@ class ShopController extends Controller
     /**
      * bakery/orders/   - GET
      */
-    public function viewAllOrders() {
+    public function viewAllOrders(Request $request) {
 
-        // TODO ...
+        $userId = $request->user()->id;
+
+        if(!$userId) {
+
+            Session::flash('message', 'You need to login to see your orders.');
+            return redirect('/login');
+
+        }
+
+        // get orders related to this user
+        $orders_list_db = Order::where('user_id', '=', $userId)->with('products')->get()->toArray();
+        $user_name = $request->user()->name;
+
+        $ordersList;
+
+        foreach($orders_list_db as $list) {
+
+            $ordersList[] = $list['products'];
+
+        }
 
         return view('orders.viewall')->with([
+
             'path' => 'orders',
+            'ordersList' => $ordersList,
+            'user_name' => $user_name,
+
         ]);
     }
 
@@ -31,15 +53,17 @@ class ShopController extends Controller
     public function viewOrder($id) {
 
         // find order that matches id
-        $order = Order::with('products')->find($id);
+        $order = Order::with('products')->with('user')->find($id);
 
         if(!$order) {
+
             Session::flash('message', 'No order found.');
             return redirect('/orders');
+
         }
 
         // get user's name
-        $user = User::find($order->user_id)->pluck('name')->first();
+        $userName = $order->user->name;
 
         $productsArray = [];
         $totalPrice = 0;
@@ -54,11 +78,13 @@ class ShopController extends Controller
         }
        
         return view('orders.view')->with([
+
             'path' => 'orders',
             'id' => $id,
             'productsArray' => $productsArray,
             'totalPrice' => $totalPrice,
             'userName' => $userName,
+
         ]);
     }
 
@@ -72,8 +98,10 @@ class ShopController extends Controller
         $order = Order::with('products')->find($id);
 
         if(!$order) {
+
             Session::flash('message', 'No order found.');
             return redirect('/orders');
+
         }
 
         $productsArray = [];
@@ -86,13 +114,16 @@ class ShopController extends Controller
 
             // calculate total price
             $totalPrice += $product->price;
+
         }
        
         return view('orders.delete')->with([
+
             'path' => 'orders',
             'id' => $id,
             'productsArray' => $productsArray,
             'totalPrice' => $totalPrice,
+
         ]);
 
     }
@@ -107,8 +138,10 @@ class ShopController extends Controller
         $order = Order::find($request->id);
 
         if(!$order) {
+
             Session::flash('message', 'No order found.');
             return redirect('/orders');
+
         }
         
         $order->products()->detach();
@@ -130,8 +163,10 @@ class ShopController extends Controller
         $menu = Product::where('category', 'LIKE', 'sweets')->get();
 
         return view('menu.sweets')->with([
+
             'path' => 'menu',
             'menu' => $menu,
+
         ]);
     }
 
@@ -143,12 +178,14 @@ class ShopController extends Controller
 
         if(count($request->order) != 0) {
 
-            // check if user is logged
+            // check if user is logged in
             $user = $request->user();
 
             if(!$user) {
+
                 Session::flash('message', 'You need to login to place an order.');
                 return redirect('/menu/sweets');
+
             }
 
             // create new order
@@ -157,11 +194,9 @@ class ShopController extends Controller
             $order->save();
 
             // get the selected products from user
-            $selectedProducts = $request->order;
+            foreach($request->order as $productId) {
 
-            foreach($selectedProducts as $product_id) {
-
-                $product = Product::where('id', 'LIKE', $product_id)->first();
+                $product = Product::where('id', 'LIKE', $productId)->first();
                 $order->products()->save($product);
 
             }
@@ -202,8 +237,10 @@ class ShopController extends Controller
         $menu = Product::where('category', 'LIKE', 'others')->get();
 
         return view('menu.others')->with([
+
             'path' => 'menu',
             'menu' => $menu,
+
         ]);
     }
 
@@ -217,8 +254,10 @@ class ShopController extends Controller
         $menu = Product::where('category', 'LIKE', 'snacks')->get();
 
         return view('menu.snacks')->with([
+
             'path' => 'menu',
             'menu' => $menu,
+
         ]);
     }
 }

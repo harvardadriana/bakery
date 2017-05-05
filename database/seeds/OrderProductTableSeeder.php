@@ -10,7 +10,7 @@ class OrderProductTableSeeder extends Seeder
     public function run() {
 
 	    $orders =[
-	        1 => [ 8 ],
+	        1 => [ 8, 5, 6, 4 ],
 	        2 => [ 3, 6, 7],
 	        3 => [ 9, 5, 6, 1],
 	    ];

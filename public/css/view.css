@@ -4,6 +4,7 @@
 table {
 	width: 90%;
 	margin: 0 auto;
+	margin-bottom: 40px;
 	border-collapse: collapse;
 }
 
@@ -11,7 +12,16 @@ main h1 {
 	float: left;
 	color: #585858;
 	text-align: left;
-	margin: 40px 0 40px 60px;
+	margin: 60px 0 50px 60px;
+}
+
+caption {
+	color: #585858;
+	text-align: left;
+	font-size: 30px;
+	margin-bottom: 20px;
+	font-family: Georgia,
+	font-weight: bold;
 }
 
 th {
