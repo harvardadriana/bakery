@@ -1,4 +1,4 @@
-/* login.css */
+/* auth.css */
 
 
 main {
@@ -9,7 +9,7 @@ main {
 	overflow: auto;
 }
 
-#form-wrapper {
+.form-wrapper {
 	width: 70%;
 	margin: 0 auto;
 	margin-top: 60px;
@@ -20,7 +20,7 @@ main {
 	text-align: center;
 }
 
-#form-wrapper h1 {
+.form-wrapper h1 {
 	margin: 25px 0 10px;
 	color: #3d3d3d;
 }
@@ -30,17 +30,28 @@ main {
 }
 
 #myForm li input, 
-#myForm li label {
+#myForm li label, 
+select {
 	display: block;
-	width: 400px;
 	height: 30px;
 	margin: 0 auto;
 	font-size: 18px;
 	border-radius: 5px;
 }
 
-#myForm label {
+#myForm li label {
+	width: 480px;
+	padding-left: 80px;
 	text-align: left;
+}
+
+#myForm li input,  
+select {
+	width: 400px;
+}
+
+#myForm li label#rememberMe {
+	padding-left: 5px;
 }
 
 #myForm input[type="checkbox"] {
@@ -50,6 +61,12 @@ main {
 #myForm input+label,
 #myForm input[type="checkbox"] {
 	display: inline;
+}
+
+legend {
+	display: block;
+	margin-top: 20px;
+	text-align: center;
 }
 
 /* submit button */
@@ -70,19 +87,11 @@ main {
 	color: #000;
 }
 
-p {
-	margin-bottom: 5px;
-}
-
 .required {
 	font-size: 80%;
 	font-style: italic;
 	color: red;
 	margin-left: 5px;
-}
-
-.infoMessage {
-	margin-top: 15px;
 }
 
 /* footer */

@@ -26,11 +26,11 @@
 
 			<h1>View all orders of {{ $user_name }} </h1>
 
-			@foreach($ordersList as $products)
+			@foreach($ordersList as $orders)
 
 			 	<table>
 				
-					<caption>Order number: {{ $products[0]['pivot']['order_id'] }}</caption>
+					<caption>Order number: {{ $orders[0]['pivot']['order_id'] }}</caption>
 
 					<thead>
 						<tr>
@@ -43,7 +43,7 @@
 
 					<tbody>
 
-						@foreach($products as $product)
+						@foreach($orders as $product)
 							<tr>
 								<td>{!! $product['image'] !!}</td>
 								<td>{!! $product['product_name'] !!}</td>
@@ -58,9 +58,12 @@
 			@endforeach
 
 		@else
-
+			
 			<h1>You have no orders.</h1>
-
+			<div class="emptyCart">
+				<img src="../images/cupcake.jpg" alt="cupcake" />
+			</div>
+			
 		@endif
 
 	</main>

@@ -42,4 +42,19 @@ class WelcomeController extends Controller
     	]);
 	}
 
+    public function editProfile(Request $request) {
+        
+        return view('profile')->with([ 
+            'path' => 'profile',
+        ]);
+
+    }
+
+    public function saveProfile(Request $request) {
+              
+        return view('profile')->with([ 
+            'path' => 'profile',
+        ]);  
+    }
+
 }

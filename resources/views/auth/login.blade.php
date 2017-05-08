@@ -8,14 +8,14 @@
 
 @push('head')
 
-    <link href="/css/login.css" rel="stylesheet" />
+    <link href="/css/auth.css" rel="stylesheet" />
     
 @endpush
 
 @section('main')
 
     <main>
-        <div id="form-wrapper">
+        <div class="form-wrapper">
             <h1>Login</h1>
 
             <form id='myForm' method="POST" action="/login">
@@ -25,17 +25,17 @@
                 <ul>
                     <li>
                         <label for="email">E-mail @if($errors->has('email'))<span class="required">{{ $errors->first('email') }}</span>@endif</label>
-                        <input type="email" name="email" id="email" maxlength="90" value="{{ old('email') }}"  />
+                        <input type="email" name="email" id="email" maxlength="255" value="{{ old('email') }}" required autofocus />
                     </li> 
 
                     <li>
                         <label for="password">Password @if($errors->has('password'))<span class="required">{{ $errors->first('password') }}</span>@endif</label>
-                        <input type="password" name="password" id="password" maxlength="10"  />
+                        <input type="password" name="password" id="password" maxlength="20" required />
                     </li>  
                   
                     <li>
                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
-                        <label for="remember">Remember Me</label>
+                        <label for="remember" id="rememberMe">Remember Me</label>
                     </li>
 
                 </ul>

@@ -1,0 +1,20 @@
+/* register.css */
+
+
+main {
+	background: url('../images/cupcakes.jpg') no-repeat;
+	background-size: cover;
+	width: 1045px;
+	height: 980px;
+	overflow: auto;
+}
+
+p {
+	margin-bottom: 5px;
+}
+
+.infoMessage {
+	margin-top: 15px;
+	font-size: 20px;
+	color: red;
+}

@@ -2,7 +2,7 @@
 
 @section('title')
 
-    Piece of Heaven Bakery - Register
+    Piece of Heaven Bakery - Edit Profile
     
 @endsection
 
@@ -19,9 +19,9 @@
 
         <div class="form-wrapper">
             
-            <h1>Register</h1>
+            <h1>Edit Profile</h1>
 
-            <form id='myForm' method="POST" action="{{ route('register') }}">
+            <form id='myForm'  action='/profile'>
 
                 {{ csrf_field() }}
 

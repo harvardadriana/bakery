@@ -15,13 +15,22 @@ class UsersTableSeeder extends Seeder
 	    $user = \App\User::firstOrCreate([
 	        'email' => 'jill@harvard.edu',
 	        'name' => 'Jill TestUser',
-	        'password' => \Hash::make('helloworld')
+	        'password' => \Hash::make('helloworld'),
+	        'street' => 'Oxford street 23',
+            'state' => 'Massachusetts',
+            'zip' => '02114',
+            'subscribe' => 'yes',
+
 	    ]);
 
 	    $user = \App\User::firstOrCreate([
 	        'email' => 'jamal@harvard.edu',
 	        'name' => 'Jamal TestUser',
-	        'password' => \Hash::make('helloworld')
+	        'password' => \Hash::make('helloworld'),
+	        'street' => 'Brattle street 51',
+            'state' => 'Massachusetts',
+            'zip' => '02138',
+            'subscribe' => 'no',
 	    ]);
 	    
 	}

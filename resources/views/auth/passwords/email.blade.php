@@ -1,46 +1,42 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@section('title')
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
+    Piece of Heaven Bakery - Reset
+    
+@endsection
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+@push('head')
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+    <link href="/css/login.css" rel="stylesheet" />
+    
+@endpush
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+@section('main')
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    @if (session('status'))
+        {{ session('status') }}
+    @endif
+
+    <div id="form-wrapper">
+
+        <h1>Reset your passwod</h1>
+
+        <form id='myForm' method="POST" action="{{ route('password.email') }}">
+
+            {{ csrf_field() }}
+
+            <ul>
+                <li>
+                    <label for="email">E-mail Address @if($errors->has('email'))<span class="required">{{ $errors->first('email') }}</span>@endif</label><br/>
+                    <input type="email" name="email" id="email" maxlength="90" value="{{ old('email') }}" required />
+                </li> 
+            </ul>
+
+            <button type="submit">Send Password Reset Link</button>
+
+        </form>
+
     </div>
-</div>
+
 @endsection

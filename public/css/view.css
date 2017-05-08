@@ -32,7 +32,7 @@ tr:nth-child(even) {
     background-color: #EFF0F1;
 }
 
-img {
+table img {
 	width: 100px;
 }
 
@@ -56,4 +56,8 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
 	background-color: #E9C4CB;
+}
+
+.emptyCart img {
+	width: 250px;
 }

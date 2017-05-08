@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
@@ -16,9 +17,10 @@ class ShopController extends Controller
      */
     public function viewAllOrders(Request $request) {
 
-        $userId = $request->user()->id;
+        // get user id
+        $user_id = Auth::id();
 
-        if(!$userId) {
+        if(!Auth::check()) {
 
             Session::flash('message', 'You need to login to see your orders.');
             return redirect('/login');
@@ -26,12 +28,13 @@ class ShopController extends Controller
         }
 
         // get orders related to this user
-        $orders_list_db = Order::where('user_id', '=', $userId)->with('products')->get()->toArray();
+        $orders_list_db = Order::where('user_id', '=', $user_id)->with('products')->get()->toArray();
 
         if($orders_list_db) {
 
-            $ordersList;
+            $ordersList = [];
 
+            // get each product in user's orders list
             foreach($orders_list_db as $list) {
 
                 $ordersList[] = $list['products'];
@@ -40,10 +43,13 @@ class ShopController extends Controller
 
         }
         else {
+
             $ordersList = [];
+            
         }
 
-        $user_name = $request->user()->name;
+        // get user name
+        $user_name = Auth::user()->name;
 
         return view('orders.viewall')->with([
 
@@ -187,9 +193,7 @@ class ShopController extends Controller
         if(count($request->order) != 0) {
 
             // check if user is logged in
-            $user = $request->user();
-
-            if(!$user) {
+            if(!Auth::user()) {
 
                 Session::flash('message', 'You need to login to place an order.');
                 return redirect('/menu/sweets');
@@ -198,7 +202,9 @@ class ShopController extends Controller
 
             // create new order
             $order = new Order();
-            $order->user_id = $request->user()->id;
+
+            // associate order with user
+            $order->user()->associate($request->user()->id);
             $order->save();
 
             // get the selected products from user
@@ -206,8 +212,8 @@ class ShopController extends Controller
 
                 $product = Product::where('id', 'LIKE', $productId)->first();
                 $order->products()->save($product);
-
-            }
+ 
+             }
 
             Session::flash('message', 'Your order has been placed.');
 

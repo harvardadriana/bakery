@@ -42,7 +42,7 @@
                     </ul>
                 </li>
                 <li class="navorders"><a href="/orders" title="Orders">Orders</a></li>
-                <li class="navstores"><a href="/stores" title="Stores">Stores</a></li>
+                <li class="navprofile"><a href="/profile/edit" title="Profile">Profile</a></li>
                 <li class="navlogout">
                     <form method='POST' id='logout' action='/logout'>
                         {{csrf_field()}}
@@ -82,8 +82,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="navstores"><a href="/stores" title="Stores">Stores</a></li>
                 <li class="navcontact"><a href="/contact" title="Contact us">Contact us</a></li>
+                <li class="navregister"><a href="/register" title="Register">Register</a></li>
                 <li class="navlogin"><a href="/login" title="Login">Login</a></li>
                 
             @endif
