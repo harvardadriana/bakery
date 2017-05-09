@@ -57,7 +57,7 @@
                             <option value='california' {{ ('state' == 'california')  ? 'SELECTED' : '' }} >California</option>
                             <option value='florida' {{ ('state'  == 'florida') ? 'SELECTED' : '' }} >Florida</option>
                             <option value='hawaii' {{ ('state'  == 'hawaii') ? 'SELECTED' : '' }} >Hawaii</option>
-                            <option value='massachusetts' {{ ('state'  == 'massachusetts') ? 'SELECTED' : '' }} >Massachussets</option>
+                            <option value='massachusetts' {{ ('state'  == 'massachusetts') ? 'SELECTED' : '' }} >Massachusetts</option>
                         </select>
                     </li>
 

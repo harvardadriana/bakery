@@ -10,10 +10,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/orders/{id}', 'ShopController@viewOrder');
 	Route::get('/orders/delete/{id}', 'ShopController@delete');
 	Route::post('/orders/delete', 'ShopController@deleteOrder');
-	Route::get('/profile', 'WelcomeController@editProfile');
-	Route::post('/profile', 'WelcomeController@saveProfile');
 
+	Route::get('/profile/edit', 'ProfileController@editProfile');
+	Route::post('/profile/edit', 'ProfileController@saveProfile');
+
+	Route::get('/profile/view/{id}', 'ProfileController@showProfile');
 });
+
 
 
 /**

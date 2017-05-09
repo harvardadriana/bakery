@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -41,20 +42,5 @@ class WelcomeController extends Controller
     		'path' => 'home',
     	]);
 	}
-
-    public function editProfile(Request $request) {
-        
-        return view('profile')->with([ 
-            'path' => 'profile',
-        ]);
-
-    }
-
-    public function saveProfile(Request $request) {
-              
-        return view('profile')->with([ 
-            'path' => 'profile',
-        ]);  
-    }
 
 }
