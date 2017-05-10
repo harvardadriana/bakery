@@ -57,7 +57,7 @@
 
 	<!-- SCRIPTS RELEVANT FOR THIS PAGE ONLY -->
 	<!-- Google Map API -->
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"> </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9NXpRJ8_Rf54a9ovXF1nyu_TsmM_qWoI"> </script>	
 	<script src="/js/stores.js"></script>	
 
 @endpush
