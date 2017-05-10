@@ -58,6 +58,17 @@ input[type="submit"]:hover {
 	background-color: #E9C4CB;
 }
 
-.emptyCart img {
-	width: 250px;
+.emptyCart {
+	background: url('../../images/cupcake.jpg') no-repeat;
+	background-size: cover;
+	width: 1045px;
+	height: 460px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.emptyCart h1 {
+	margin: 150px 0 0 90px;
+	color: #3d3d3d;
+	text-align: center;
 }

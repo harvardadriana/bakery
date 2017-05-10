@@ -1,0 +1,10 @@
+/* login.css */
+
+
+main {
+	background: url('../../images/login-page/cupcakes.png') no-repeat;
+	background-size: cover;
+	width: 1045px;
+	height: 600px;
+	overflow: auto;
+}

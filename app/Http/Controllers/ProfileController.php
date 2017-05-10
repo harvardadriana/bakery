@@ -10,17 +10,21 @@ use Session;
 class ProfileController extends Controller
 {
 
+    /**
+     * bakery/profile/edit   - GET
+     */
     public function editProfile(Request $request) {
         
         // get user id
         $userId = Auth::id();
 
+        // check if user is logged in
         if(!Auth::check()) {
             Session::flash('message', 'You need to login to update your profile.');
             return redirect('/login');
         }
 
-        // get user information
+        // retrieve user information
         $user = User::find($userId);
 
         return view('profile.edit')->with([
@@ -30,6 +34,9 @@ class ProfileController extends Controller
 
     }
 
+    /**
+     * bakery/profile/edit   - POST
+     */
     public function saveProfile(Request $request) {
 
     	// validate input from user
@@ -52,14 +59,29 @@ class ProfileController extends Controller
 		// save in the dB
 		$user->save();
 
-        //Session::flash('message', 'Your profile has been updated.');
-
-        return redirect('/profile/edit/'.$request->id); 
+        Session::flash('message', 'Your profile has been updated.');
+        return redirect('/profile/view/'.$request->id); 
     }
 
+    /**
+     * bakery/profile/view/{id}
+     */
    	public function showProfile($id) {
 
-        return view('profile.edit');
+        // check if user is logged in
+        if(!Auth::check()) {
+            Session::flash('message', 'You need to login to view your profile.');
+            return redirect('/login');
+        }
+
+        // get user information
+        $user = User::find($id);
+
+        return view('profile.view')->with([
+            'path' => 'profile',
+            'user' => $user,
+        ]);
+
     }
 
 }

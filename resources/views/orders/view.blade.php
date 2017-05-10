@@ -8,7 +8,7 @@
 
 @push('head')
 
-	<link href="/css/view.css" rel="stylesheet" />
+	<link href="/css/orders/view.css" rel="stylesheet" />
 
 @endpush
 

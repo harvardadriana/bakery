@@ -8,7 +8,7 @@
 
 @push('head')
 
-	<link href="/css/view.css" rel="stylesheet" />
+	<link href="/css/orders/view.css" rel="stylesheet" />
 
 @endpush
 
@@ -59,9 +59,8 @@
 
 		@else
 			
-			<h1>You have no orders.</h1>
 			<div class="emptyCart">
-				<img src="../images/cupcake.jpg" alt="cupcake" />
+				<h1>You have no orders.</h1>
 			</div>
 			
 		@endif

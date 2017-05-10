@@ -2,15 +2,18 @@
 
 
 main {
-	background: url('../images/cupcakes.jpg') no-repeat;
+	background: url('../../images/cake-register.jpg') no-repeat;
 	background-size: cover;
 	width: 1045px;
 	height: 980px;
 	overflow: auto;
 }
 
-p {
+legend {
+	margin: 0 auto;
 	margin-bottom: 5px;
+	margin-top: 20px;
+	display: block;
 }
 
 .infoMessage {

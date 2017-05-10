@@ -1,0 +1,30 @@
+/* edit.css */
+
+
+main {
+	background: url('../../images/cake.jpg') no-repeat;
+	background-size: cover;
+	width: 1045px;
+	height: 750px;
+	overflow: auto;
+}
+
+
+.infoMessage {
+	margin-top: 15px;
+	font-size: 20px;
+	color: red;
+}
+
+#myForm li input#yes,
+#myForm li input#no {
+	display: inline-block;
+	margin: 0 10px 0 30px;
+	width: 25px;
+}
+
+#myForm li#subscribe label {
+	display: inline-block;
+	padding: 0;
+	width: 15px;
+} 

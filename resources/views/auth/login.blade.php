@@ -8,7 +8,8 @@
 
 @push('head')
 
-    <link href="/css/auth.css" rel="stylesheet" />
+    <link href="/css/auth/login.css" rel="stylesheet" />
+    <link href="/css/auth/auth.css" rel="stylesheet" />
     
 @endpush
 
