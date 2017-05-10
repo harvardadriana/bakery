@@ -82,7 +82,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="navcontact"><a href="/contact" title="Contact us">Contact us</a></li>
+                <li class="navstores"><a href="/stores" title="Stores">Stores</a></li>
                 <li class="navregister"><a href="/register" title="Register">Register</a></li>
                 <li class="navlogin"><a href="/login" title="Login">Login</a></li>
                 

@@ -1,8 +1,6 @@
 /*  view.css  */
 
 
-
-
 table {
 	width: 90%;
 	margin: 0 auto;
@@ -22,7 +20,7 @@ caption {
 	text-align: left;
 	font-size: 30px;
 	margin-bottom: 20px;
-	font-family: Georgia,
+	font-family: Georgia;
 	font-weight: bold;
 }
 
