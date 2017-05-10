@@ -30,7 +30,7 @@
 
 			 	<table>
 				
-					<caption>Order number: {{ $orders[0]['pivot']['order_id'] }}</caption>
+					<caption>Order number: {{ $orders[0]['pivot']['order_id'] }}<a href="/orders/delete/{{ $orders[0]['pivot']['order_id'] }}"><img src="../../images/bin.png" alt="bin" /></a></caption>
 
 					<thead>
 						<tr>

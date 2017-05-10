@@ -1,6 +1,8 @@
 /*  view.css  */
 
 
+
+
 table {
 	width: 90%;
 	margin: 0 auto;
@@ -32,7 +34,7 @@ tr:nth-child(even) {
     background-color: #EFF0F1;
 }
 
-table img {
+tbody img {
 	width: 100px;
 }
 
@@ -71,4 +73,10 @@ input[type="submit"]:hover {
 	margin: 150px 0 0 90px;
 	color: #3d3d3d;
 	text-align: center;
+}
+
+a>img {
+	width: 60px;
+	height: auto;
+	float: right;
 }
