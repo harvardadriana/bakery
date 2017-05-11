@@ -27,7 +27,7 @@
 
                 <ul>
                     <li>
-                        <label for="name">&#42;Name @if($errors->has('name'))<span class="required">{{ $errors->first('name') }}</span>@endif</label>
+                        <label for="name">&#42;Name &#40;letters&#124;spaces&#41; @if($errors->has('name'))<span class="required">{{ $errors->first('name') }}</span>@endif</label>
                         <input type="text" pattern="[a-zA-Z\s]+" name="name" id="name" maxlength="255" value="{{ old('name') }}" required autofocus />
                     </li>                            
 
@@ -47,7 +47,7 @@
                     </li>
 
                     <li>
-                        <label for="street">* Street @if($errors->has('street'))<span class="required">{{ $errors->first('street') }}</span>@endif</label>
+                        <label for="street">* Street &#40;letters&#124;numbers&#124;spaces&#41; @if($errors->has('street'))<span class="required">{{ $errors->first('street') }}</span>@endif</label>
                         <input type="text" pattern="[a-zA-Z0-9\s]+" name="street" id="street" minlength="1" value="{{ old('street') }}" required />
                     </li>
 
