@@ -28,7 +28,7 @@
                 <ul>
                     <li>
                         <label for="name">&#42;Name @if($errors->has('name'))<span class="required">{{ $errors->first('name') }}</span>@endif</label>
-                        <input type="text" name="name" id="name" maxlength="255" value="{{ old('name') }}" required autofocus />
+                        <input type="text" pattern="[a-zA-Z\s]+" name="name" id="name" maxlength="255" value="{{ old('name') }}" required autofocus />
                     </li>                            
 
                     <li>
@@ -48,7 +48,7 @@
 
                     <li>
                         <label for="street">* Street @if($errors->has('street'))<span class="required">{{ $errors->first('street') }}</span>@endif</label>
-                        <input type="text" name="street" id="street" minlength="1" value="{{ old('street') }}" required />
+                        <input type="text" pattern="[a-zA-Z0-9\s]+" name="street" id="street" minlength="1" value="{{ old('street') }}" required />
                     </li>
 
                     <li>
@@ -96,6 +96,7 @@
                             <option value='southcarolina' {{ ('state' == 'southcarolina')  ? 'SELECTED' : '' }} >South Carolina</option>
                             <option value='southdakota' {{ ('state' == 'southdakota')  ? 'SELECTED' : '' }} >South Dakota</option>
                             <option value='tennessee' {{ ('state' == 'tennessee')  ? 'SELECTED' : '' }} >Tennessee</option>
+                            <option value='texas' {{ ('state' == 'texas')  ? 'SELECTED' : '' }} >Texas</option>
                             <option value='utah' {{ ('state' == 'utah')  ? 'SELECTED' : '' }} >Utah</option>
                             <option value='vermont' {{ ('state' == 'vermont')  ? 'SELECTED' : '' }} >Vermont</option>
                             <option value='virgina' {{ ('state' == 'virgina')  ? 'SELECTED' : '' }} >Virgina</option>
