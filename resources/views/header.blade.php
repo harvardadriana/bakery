@@ -24,21 +24,6 @@
                                 <li><a href="/menu/sweets" title="Ice cream cakes">Ice cream cakes</a></li>
                             </ul>
                         </li>
-                        <!-- second level menu - snacks -->
-                        <li><a href="/menu/snacks" title="Snacks">Snacks</a>
-                            <ul>
-                                <li><a href="/menu/snacks" title="Ciabatta">Ciabatta</a></li>
-                                <li><a href="/menu/snacks" title="Tuna melt">Tuna melt</a></li>
-                                <li><a href="/menu/snacks" title="Chicken wrap">Chicken wrap</a></li>
-                            </ul>
-                        </li>
-                        <!-- second level menu - others -->
-                        <li><a href="/menu/others" title="Others">Others</a>
-                            <ul>
-                                <li><a href="/menu/others" title="Breads">Breads</a></li>
-                                <li><a href="/menu/others" title="Pizzas">Pizzas</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
                 <li class="navorders"><a href="/orders" title="Orders">Orders</a></li>
@@ -63,21 +48,6 @@
                                 <li><a href="/menu/sweets" title="Pies">Pies</a></li>
                                 <li><a href="/menu/sweets" title="Cookies">Cookies</a></li>
                                 <li><a href="/menu/sweets" title="Ice cream cakes">Ice cream cakes</a></li>
-                            </ul>
-                        </li>
-                        <!-- second level menu - snacks -->
-                        <li><a href="/menu/snacks" title="Snacks">Snacks</a>
-                            <ul>
-                                <li><a href="/menu/snacks" title="Ciabatta">Ciabatta</a></li>
-                                <li><a href="/menu/snacks" title="Tuna melt">Tuna melt</a></li>
-                                <li><a href="/menu/snacks" title="Chicken wrap">Chicken wrap</a></li>
-                            </ul>
-                        </li>
-                        <!-- second level menu - others -->
-                        <li><a href="/menu/others" title="Others">Others</a>
-                            <ul>
-                                <li><a href="/menu/others" title="Breads">Breads</a></li>
-                                <li><a href="/menu/others" title="Pizzas">Pizzas</a></li>
                             </ul>
                         </li>
                     </ul>

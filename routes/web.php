@@ -45,26 +45,6 @@ Route::get('/', 'WelcomeController@index');
 
 
 
-
-
-
-
-
-
-
-Route::get('/show-login-status', function() {
-
-    # You may access the authenticated user via the Auth facade
-    $user = Auth::user();
-
-    if($user)
-        dump('You are logged in.', $user->toArray());
-    else
-        dump('You are not logged in.');
-
-    return;
-});
-
 /**
  * debugging/testing tools - LOCAL ENVIRONMENT ONLY
  */
@@ -81,10 +61,29 @@ if(App::environment('local')) {
         return 'Dropped bakery; created bakery.';
     });
 
+
+	/**
+	 * show status of login
+	 */
+	Route::get('/show-login-status', function() {
+
+	    # You may access the authenticated user via the Auth facade
+	    $user = Auth::user();
+
+	    if($user)
+	        dump('You are logged in.', $user->toArray());
+	    else
+	        dump('You are not logged in.');
+
+	    return;
+	});
+
+
 	/**
 	 * /logs - Log viewer
 	 */
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 
 	/**
 	 * /debug
@@ -120,19 +119,3 @@ if(App::environment('local')) {
 
 	});
 };
-
-
-
-
-
-/**
- * bakery/menu/others
- */
-Route::get('/menu/others', 'ShopController@others');
-
-
-/**
- * bakery/menu/snacks
- */
-Route::get('/menu/snacks', 'ShopController@snacks');
-

@@ -46,7 +46,6 @@
             </form>
 
             <p>New to Piece of Heaven Bakery&#63; Register <a href='/register'>here</a></p>
-            <p><a href="/password/reset">Oh no, I forgot my password&#33;</a></p><br />
 
         </div>
     </main>

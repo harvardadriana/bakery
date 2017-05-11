@@ -35,19 +35,6 @@
                         <li>Ice cream cakes</li>
                     </ul>
                 </li>
-                <li id="snacks"><a href="/menu/snacks"><span class="upper">Snacks</span></a>
-                    <ul class="subitems">
-                        <li>Ciabatta</li>
-                        <li>Tuna melt</li>
-                        <li>Chicken wrap</li>
-                    </ul>
-                </li>
-                <li id="others"><a href="/menu/others"><span class="upper">Others</span></a>
-                    <ul class="subitems">
-                        <li>Breads</li>
-                        <li>Pizzas</li>
-                    </ul>
-                </li>
             </ul>
         </div>
 
