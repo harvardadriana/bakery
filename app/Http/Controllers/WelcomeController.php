@@ -9,19 +9,6 @@ class WelcomeController extends Controller
 {
 
 	/*
-     * bakery/contact
-     */
-    public function contact(Request $request){
-        // check url path
-        $path = $request->path();
-
-    	return view('contact')->with([ 
-    		'path' => $path,
-    	]);
-	}
-
-
-	/*
      * bakery/stores
      */
     public function stores(Request $request){
@@ -32,7 +19,6 @@ class WelcomeController extends Controller
     		'path' => $path,
     	]);
 	}
-
 
     /*
      * bakery/

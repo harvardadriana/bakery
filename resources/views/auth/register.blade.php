@@ -108,13 +108,17 @@
 
                     <li>
                         <label for="zip">* Zip @if($errors->has('zip'))<span class="required">{{ $errors->first('zip') }}</span>@endif</label>
-                        <input type="number" name="zip" id="zip" maxlength="5" value="{{ old('zip') }}" required />
+                        <input type="text" pattern="\d{5}" name="zip" id="zip" maxlength="5" value="{{ old('zip') }}" required />
                     </li>
 
-                    <legend>Would you like to subscribe to our newsletter?</legend><br />
-                    <label><input type="radio" name="subscribe" value="yes" checked {{ ('subscribe' == 'yes') ? 'CHECKED' : '' }} />Yes</label>
-                    <label><input type="radio" name="subscribe" value="no" {{ ('subscribe' == 'no') ? 'CHECKED' : '' }} />No</label>
-
+                    <li id="subscribe">
+                        <p>Would you like to subscribe to our newsletter?</p> 
+                        <input type="radio" name="subscribe" id="yes" value="yes" checked {{ ('subscribe' == 'yes') ? 'CHECKED' : '' }} />
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="subscribe" id="no" value="no" {{ ('subscribe' == 'no') ? 'CHECKED' : '' }} />
+                        <label for="no">No</label>
+                    </li>
+                    
                 </ul>
 
                 <p class="infoMessage">* Required fields</p>

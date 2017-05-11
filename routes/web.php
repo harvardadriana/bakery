@@ -1,6 +1,12 @@
 <?php
 
 
+/**
+ * bakery/stores/
+ */
+Route::get('/stores', 'WelcomeController@stores');
+
+
 Route::group(['middleware' => 'auth'], function () {
 
 	/**
@@ -11,12 +17,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/orders/delete/{id}', 'ShopController@delete');
 	Route::post('/orders/delete', 'ShopController@deleteOrder');
 
+	/**
+	 * bakery/profile/edit
+	 */
 	Route::get('/profile/edit', 'ProfileController@editProfile');
 	Route::post('/profile/edit', 'ProfileController@saveProfile');
-
 	Route::get('/profile/view/{id}', 'ProfileController@showProfile');
 });
-
 
 
 /**
@@ -115,16 +122,7 @@ if(App::environment('local')) {
 };
 
 
-/**
- * bakery/contact/
- */
-Route::get('/contact', 'WelcomeController@contact');
 
-
-/**
- * bakery/stores/
- */
-Route::get('/stores', 'WelcomeController@stores');
 
 
 /**

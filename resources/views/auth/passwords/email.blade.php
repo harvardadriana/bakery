@@ -2,13 +2,14 @@
 
 @section('title')
 
-    Piece of Heaven Bakery - Reset
+    Piece of Heaven Bakery - Email
     
 @endsection
 
 @push('head')
 
-    <link href="/css/login.css" rel="stylesheet" />
+    <link href="/css/auth/login.css" rel="stylesheet" />
+    <link href="/css/auth/auth.css" rel="stylesheet" />
     
 @endpush
 
@@ -18,25 +19,29 @@
         {{ session('status') }}
     @endif
 
-    <div id="form-wrapper">
+     <main>
 
-        <h1>Reset your passwod</h1>
+        <div class="form-wrapper">
 
-        <form id='myForm' method="POST" action="{{ route('password.email') }}">
+            <h1>Reset your passwod</h1>
 
-            {{ csrf_field() }}
+            <form id='myForm' method="POST" action="{{ route('password.email') }}">
 
-            <ul>
-                <li>
-                    <label for="email">E-mail Address @if($errors->has('email'))<span class="required">{{ $errors->first('email') }}</span>@endif</label><br/>
-                    <input type="email" name="email" id="email" maxlength="90" value="{{ old('email') }}" required />
-                </li> 
-            </ul>
+                {{ csrf_field() }}
 
-            <button type="submit">Send Password Reset Link</button>
+                <ul>
+                    <li>
+                        <label for="email">E-mail Address @if($errors->has('email'))<span class="required">{{ $errors->first('email') }}</span>@endif</label><br/>
+                        <input type="email" name="email" id="email" maxlength="90" value="{{ old('email') }}" required />
+                    </li> 
+                </ul>
 
-        </form>
+                <button type="submit">Send Password Reset Link</button>
 
-    </div>
+            </form>
+
+        </div>
+
+    </main>
 
 @endsection

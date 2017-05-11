@@ -8,7 +8,7 @@
 
 @push('head')
 
-    <link href="/css/login.css" rel="stylesheet" />
+    <link href="/css/auth/login.css" rel="stylesheet" />
     
 @endpush
 
@@ -21,7 +21,7 @@
         @endif
 
         <div id="form-wrapper">
-            <h1>Reset your passwod</h1>
+            <h1>Reset your password</h1>
 
             <form id='myForm' method="POST" action="{{ route('password.request') }}">
 
