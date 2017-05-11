@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\State;
 use Session;
 
 class ProfileController extends Controller
@@ -27,9 +28,13 @@ class ProfileController extends Controller
         // retrieve user information
         $user = User::find($userId);
 
+        // retrieve all states
+        $statesForDropdown = State::getStatesForDropdown();
+
         return view('profile.edit')->with([
         	'path' => 'profile',
         	'user' => $user,
+            'statesForDropdown' => $statesForDropdown,
         ]);
 
     }

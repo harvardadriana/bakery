@@ -33,4 +33,9 @@ class User extends Authenticatable
         
     }
 
+    public function state() {
+
+        return $this->belongsTo('App\State');
+    }
+
 }

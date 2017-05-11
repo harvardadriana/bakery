@@ -54,56 +54,56 @@
                     <li>
                         <label for='state'>* Select state</label>
                         <select name="state" id="state">
-                            <option value='alabama' {{ ('state' == 'alabama')  ? 'SELECTED' : '' }} >Alabama</option>
-                            <option value='alaska' {{ ('state' == 'alaska')  ? 'SELECTED' : '' }} >Alaska</option>
-                            <option value='arizona' {{ ('state' == 'arizona')  ? 'SELECTED' : '' }} >Arizona</option>
-                            <option value='arkansas' {{ ('state' == 'arkansas')  ? 'SELECTED' : '' }} >Arkansas</option>
-                            <option value='california' {{ ('state' == 'california')  ? 'SELECTED' : '' }} >California</option>
-                            <option value='colorado' {{ ('state' == 'colorado')  ? 'SELECTED' : '' }} >Colorado</option>
-                            <option value='connecticut' {{ ('state' == 'connecticut')  ? 'SELECTED' : '' }} >Connecticut</option>
-                            <option value='delaware' {{ ('state' == 'delaware')  ? 'SELECTED' : '' }} >Delaware</option>
-                            <option value='florida' {{ ('state'  == 'florida') ? 'SELECTED' : '' }} >Florida</option>
-                            <option value='georgia' {{ ('state' == 'georgia')  ? 'SELECTED' : '' }} >Georgia</option>
-                            <option value='hawaii' {{ ('state'  == 'hawaii') ? 'SELECTED' : '' }} >Hawaii</option>
-                            <option value='idaho' {{ ('state' == 'idaho')  ? 'SELECTED' : '' }} >Idaho</option>
-                            <option value='illinois' {{ ('state' == 'illinois')  ? 'SELECTED' : '' }} >Illinois</option>
-                            <option value='indiana' {{ ('state' == 'indiana')  ? 'SELECTED' : '' }} >Indiana</option>
-                            <option value='iowa' {{ ('state' == 'iowa')  ? 'SELECTED' : '' }} >Iowa</option>
-                            <option value='kansas' {{ ('state' == 'kansas')  ? 'SELECTED' : '' }} >Kansas</option>
-                            <option value='kentucky' {{ ('state' == 'kentucky')  ? 'SELECTED' : '' }} >Kentucky</option>
-                            <option value='louisiana' {{ ('state' == 'louisiana')  ? 'SELECTED' : '' }} >Louisiana</option>
-                            <option value='maine' {{ ('state' == 'maine')  ? 'SELECTED' : '' }} >Maine</option>
-                            <option value='maryland' {{ ('state' == 'maryland')  ? 'SELECTED' : '' }} >Maryland</option>
-                            <option value='massachusetts' {{ ('state'  == 'massachusetts') ? 'SELECTED' : '' }} >Massachusetts</option>
-                            <option value='michigan' {{ ('state' == 'michigan')  ? 'SELECTED' : '' }} >Michigan</option>
-                            <option value='minnesota' {{ ('state' == 'minnesota')  ? 'SELECTED' : '' }} >Minnesota</option>
+                            <option value='Alabama' {{ ('state' == 'Alabama')  ? 'SELECTED' : '' }} >Alabama</option>
+                            <option value='Alaska' {{ ('state' == 'Alaska')  ? 'SELECTED' : '' }} >Alaska</option>
+                            <option value='Arizona' {{ ('state' == 'Arizona')  ? 'SELECTED' : '' }} >Arizona</option>
+                            <option value='Arkansas' {{ ('state' == 'Arkansas')  ? 'SELECTED' : '' }} >Arkansas</option>
+                            <option value='California' {{ ('state' == 'California')  ? 'SELECTED' : '' }} >California</option>
+                            <option value='Colorado' {{ ('state' == 'Colorado')  ? 'SELECTED' : '' }} >Colorado</option>
+                            <option value='Connecticut' {{ ('state' == 'Connecticut')  ? 'SELECTED' : '' }} >Connecticut</option>
+                            <option value='Delaware' {{ ('state' == 'Delaware')  ? 'SELECTED' : '' }} >Delaware</option>
+                            <option value='Florida' {{ ('state'  == 'Florida') ? 'SELECTED' : '' }} >Florida</option>
+                            <option value='Georgia' {{ ('state' == 'Georgia')  ? 'SELECTED' : '' }} >Georgia</option>
+                            <option value='Hawaii' {{ ('state'  == 'Hawaii') ? 'SELECTED' : '' }} >Hawaii</option>
+                            <option value='Idaho' {{ ('state' == 'Idaho')  ? 'SELECTED' : '' }} >Idaho</option>
+                            <option value='Illinois' {{ ('state' == 'Illinois')  ? 'SELECTED' : '' }} >Illinois</option>
+                            <option value='Indiana' {{ ('state' == 'Indiana')  ? 'SELECTED' : '' }} >Indiana</option>
+                            <option value='Iowa' {{ ('state' == 'Iowa')  ? 'SELECTED' : '' }} >Iowa</option>
+                            <option value='Kansas' {{ ('state' == 'Kansas')  ? 'SELECTED' : '' }} >Kansas</option>
+                            <option value='Kentucky' {{ ('state' == 'Kentucky')  ? 'SELECTED' : '' }} >Kentucky</option>
+                            <option value='Louisiana' {{ ('state' == 'Louisiana')  ? 'SELECTED' : '' }} >Louisiana</option>
+                            <option value='Maine' {{ ('state' == 'Maine')  ? 'SELECTED' : '' }} >Maine</option>
+                            <option value='Maryland' {{ ('state' == 'Maryland')  ? 'SELECTED' : '' }} >Maryland</option>
+                            <option value='Massachusetts' {{ ('state'  == 'Massachusetts') ? 'SELECTED' : '' }} >Massachusetts</option>
+                            <option value='Michigan' {{ ('state' == 'Michigan')  ? 'SELECTED' : '' }} >Michigan</option>
+                            <option value='Minnesota' {{ ('state' == 'Minnesota')  ? 'SELECTED' : '' }} >Minnesota</option>
                             <option value='mississippi' {{ ('state' == 'mississippi')  ? 'SELECTED' : '' }} >Mississippi</option>
-                            <option value='missouri' {{ ('state'  == 'missouri') ? 'SELECTED' : '' }} >Missouri</option>
-                            <option value='montana' {{ ('state' == 'montana')  ? 'SELECTED' : '' }} >Montana</option>
-                            <option value='nebraska' {{ ('state' == 'nebraska')  ? 'SELECTED' : '' }} >Nebraska</option>
-                            <option value='nevada' {{ ('state' == 'nevada')  ? 'SELECTED' : '' }} >Nevada</option>
-                            <option value='newhampshire' {{ ('state'  == 'newhampshire') ? 'SELECTED' : '' }} >New Hampshire</option>
-                            <option value='newjersey' {{ ('state' == 'newjersey')  ? 'SELECTED' : '' }} >New Jersey</option>
-                            <option value='newmexico' {{ ('state' == 'newmexico')  ? 'SELECTED' : '' }} >New Mexico</option>
-                            <option value='newyork' {{ ('state' == 'newyork')  ? 'SELECTED' : '' }} >New York</option>
-                            <option value='northcarolina' {{ ('state' == 'northcarolina')  ? 'SELECTED' : '' }} >North Carolina</option>
-                            <option value='northdakota' {{ ('state' == 'northdakota')  ? 'SELECTED' : '' }} >North Dakota</option>
-                            <option value='ohio' {{ ('state' == 'ohio')  ? 'SELECTED' : '' }} >Ohio</option>
-                            <option value='oklahoma' {{ ('state' == 'oklahoma')  ? 'SELECTED' : '' }} >Oklahoma</option>
-                            <option value='oregon' {{ ('state' == 'oregon')  ? 'SELECTED' : '' }} >Oregon</option>
-                            <option value='pennsylvania' {{ ('state' == 'pennsylvania')  ? 'SELECTED' : '' }} >Pennsylvania</option>
-                            <option value='rhodeisland' {{ ('state' == 'rhodeisland')  ? 'SELECTED' : '' }} >Rhode Island</option>
-                            <option value='southcarolina' {{ ('state' == 'southcarolina')  ? 'SELECTED' : '' }} >South Carolina</option>
-                            <option value='southdakota' {{ ('state' == 'southdakota')  ? 'SELECTED' : '' }} >South Dakota</option>
-                            <option value='tennessee' {{ ('state' == 'tennessee')  ? 'SELECTED' : '' }} >Tennessee</option>
-                            <option value='texas' {{ ('state' == 'texas')  ? 'SELECTED' : '' }} >Texas</option>
-                            <option value='utah' {{ ('state' == 'utah')  ? 'SELECTED' : '' }} >Utah</option>
-                            <option value='vermont' {{ ('state' == 'vermont')  ? 'SELECTED' : '' }} >Vermont</option>
-                            <option value='virgina' {{ ('state' == 'virgina')  ? 'SELECTED' : '' }} >Virgina</option>
-                            <option value='washington' {{ ('state' == 'washington')  ? 'SELECTED' : '' }} >Washington</option>
-                            <option value='westvirginia' {{ ('state' == 'westvirginia')  ? 'SELECTED' : '' }} >West Virginia</option>
-                            <option value='wisconsin' {{ ('state' == 'wisconsin')  ? 'SELECTED' : '' }} >Wisconsin</option>
-                            <option value='wyoming' {{ ('state' == 'wyoming')  ? 'SELECTED' : '' }} >Wyoming</option>
+                            <option value='Missouri' {{ ('state'  == 'Missouri') ? 'SELECTED' : '' }} >Missouri</option>
+                            <option value='Montana' {{ ('state' == 'Montana')  ? 'SELECTED' : '' }} >Montana</option>
+                            <option value='Nebraska' {{ ('state' == 'Nebraska')  ? 'SELECTED' : '' }} >Nebraska</option>
+                            <option value='Nevada' {{ ('state' == 'Nevada')  ? 'SELECTED' : '' }} >Nevada</option>
+                            <option value='New Hampshire' {{ ('state'  == 'New Hampshire') ? 'SELECTED' : '' }} >New Hampshire</option>
+                            <option value='New Jersey' {{ ('state' == 'New Jersey')  ? 'SELECTED' : '' }} >New Jersey</option>
+                            <option value='New Mexico' {{ ('state' == 'New Mexico')  ? 'SELECTED' : '' }} >New Mexico</option>
+                            <option value='New York' {{ ('state' == 'New York')  ? 'SELECTED' : '' }} >New York</option>
+                            <option value='North Carolina' {{ ('state' == 'North Carolina')  ? 'SELECTED' : '' }} >North Carolina</option>
+                            <option value='North Dakota' {{ ('state' == 'North Dakota')  ? 'SELECTED' : '' }} >North Dakota</option>
+                            <option value='Ohio' {{ ('state' == 'Ohio')  ? 'SELECTED' : '' }} >Ohio</option>
+                            <option value='Oklahoma' {{ ('state' == 'Oklahoma')  ? 'SELECTED' : '' }} >Oklahoma</option>
+                            <option value='Oregon' {{ ('state' == 'Oregon')  ? 'SELECTED' : '' }} >Oregon</option>
+                            <option value='Pennsylvania' {{ ('state' == 'Pennsylvania')  ? 'SELECTED' : '' }} >Pennsylvania</option>
+                            <option value='Rhode Island' {{ ('state' == 'Rhode Island')  ? 'SELECTED' : '' }} >Rhode Island</option>
+                            <option value='South Carolina' {{ ('state' == 'South Carolina')  ? 'SELECTED' : '' }} >South Carolina</option>
+                            <option value='South Dakota' {{ ('state' == 'South Dakota')  ? 'SELECTED' : '' }} >South Dakota</option>
+                            <option value='Tennessee' {{ ('state' == 'Tennessee')  ? 'SELECTED' : '' }} >Tennessee</option>
+                            <option value='Texas' {{ ('state' == 'Texas')  ? 'SELECTED' : '' }} >Texas</option>
+                            <option value='Utah' {{ ('state' == 'Utah')  ? 'SELECTED' : '' }} >Utah</option>
+                            <option value='Vermont' {{ ('state' == 'Vermont')  ? 'SELECTED' : '' }} >Vermont</option>
+                            <option value='Virgina' {{ ('state' == 'Virgina')  ? 'SELECTED' : '' }} >Virgina</option>
+                            <option value='Washington' {{ ('state' == 'Washington')  ? 'SELECTED' : '' }} >Washington</option>
+                            <option value='West Virginia' {{ ('state' == 'West Virginia')  ? 'SELECTED' : '' }} >West Virginia</option>
+                            <option value='Wisconsin' {{ ('state' == 'Wisconsin')  ? 'SELECTED' : '' }} >Wisconsin</option>
+                            <option value='Wyoming' {{ ('state' == 'Wyoming')  ? 'SELECTED' : '' }} >Wyoming</option>
                         </select>
                     </li>
 
