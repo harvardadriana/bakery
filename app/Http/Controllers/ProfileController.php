@@ -48,7 +48,7 @@ class ProfileController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'street' => 'required|min:1',
-            'state' => 'required|alpha',
+            'state' => 'required',
             'zip' => 'required|numeric|digits:5',
         ]);
 
