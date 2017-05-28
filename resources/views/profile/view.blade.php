@@ -33,7 +33,7 @@
             <p>{{ $user->street }}</p><br />
 
             <p>State:</p>
-            <p>{{ $user->state }}</p><br />
+            <p>{{ $state_name }}</p><br />
 
             <p>Zip:</p>
             <p>{{ $user->zip }}</p><br />

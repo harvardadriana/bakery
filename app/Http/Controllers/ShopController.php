@@ -174,12 +174,17 @@ class ShopController extends Controller
     public function showMenu(Request $request) {
         
         // returns all products in that category to populate the menu
-        $menu = Product::where('category', 'LIKE', 'sweets')->get();
+        $menu = Product::all();
+        $sweets = $menu->where('category', 'LIKE', 'sweets')->all();
+        $snacks = $menu->where('category', 'LIKE', 'snacks')->all();
+        $others = $menu->where('category', 'LIKE', 'others')->all();
 
         return view('menu.sweets')->with([
 
             'path' => 'menu',
-            'menu' => $menu,
+            'sweets' => $sweets,
+            'snacks' => $snacks,
+            'others' => $others,
 
         ]);
     }

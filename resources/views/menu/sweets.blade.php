@@ -26,7 +26,7 @@
         <div id="side-menu" class="left">
             <h2>Side navigation</h2>
             <ul>
-                <li id="sweets" class="active"><a href="/menu/sweets"><span class="upper">Sweets</span></a>
+                <li id="sweets" class="menu active"><a href="#"><span class="upper">Sweets</span></a>
                     <ul class="subitems">
                         <li>Cakes</li>
                         <li>Cupcakes</li>
@@ -35,36 +35,114 @@
                         <li>Ice cream cakes</li>
                     </ul>
                 </li>
+                <li id="snacks" class="menu" ><a href="#"><span class="upper">Snacks</span></a>
+                    <ul class="subitems">
+                        <li>Ciabatta</li>
+                        <li>Tuna melt</li>
+                        <li>Chicken wrap</li>
+                    </ul>
+                </li>
+                <li id="others" class="menu" ><a href="#"><span class="upper">Others</span></a>
+                    <ul class="subitems">
+                        <li>Breads</li>
+                        <li>Pizzas</li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
         <!-- CAKE GALLERY -->
         <div id="food-gallery" class="gallery right">
-            <h1>Our Sweets</h1>
 
-            <form method='POST' action='/menu/sweets'>
-                {{ csrf_field() }}
+            <section id="sweetsgallery" class="" >
 
-                <input id="submit" type='submit' value="Order" />
+                <h1>Our Sweets</h1>
 
-                <ul>
-                    @if($menu->isEmpty())
-                        No products found.
-                    @else
-                        @foreach($menu as $key=>$product)
-                            <li>
-                                <a href={!! $product->link !!}>
-                                {!! $product->image !!}</a>
-                                {!! $product->product_name !!}
-                                ${!! $product->price !!}
- 
-                                <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
+                <form method='POST' action='/menu/sweets'>
+                    {{ csrf_field() }}
 
-                            </li>
-                        @endforeach
-                    @endif
-                </ul>
-            </form>
+                    <input id="submit" type='submit' value="Order" />
+
+                    <ul>
+                        @if(!isset($sweets))
+                            No products found.
+                        @else
+                            @foreach($sweets as $key=>$product)
+                                <li>
+                                    <a href={!! $product->link !!}>
+                                    {!! $product->image !!}</a>
+                                    {!! $product->product_name !!}
+                                    ${!! $product->price !!}
+     
+                                    <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
+
+                                </li>
+                            @endforeach
+                        @endif
+                    </ul>
+                </form>
+
+            </section>
+
+            <section id="snacksgallery" class="hide" >
+
+                <h1>Our Snacks</h1>
+
+                <form method='POST' action='/menu/sweets'>
+                    {{ csrf_field() }}
+
+                    <input id="submit" type='submit' value="Order" />
+
+                    <ul>
+                        @if(!isset($snacks))
+                            No products found.
+                        @else
+                            @foreach($snacks as $key=>$product)
+                                <li>
+                                    <a href={!! $product->link !!}>
+                                    {!! $product->image !!}</a>
+                                    {!! $product->product_name !!}
+                                    ${!! $product->price !!}
+     
+                                    <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
+
+                                </li>
+                            @endforeach
+                        @endif
+                    </ul>
+                </form>
+
+            </section>
+
+            <section id="othersgallery" class="hide" >
+
+                <h1>Pizzas &amp; Breads </h1>
+
+                <form method='POST' action='/menu/sweets'>
+                    {{ csrf_field() }}
+
+                    <input id="submit" type='submit' value="Order" />
+
+                    <ul>
+                        @if(!isset($others))
+                            No products found.
+                        @else
+                            @foreach($others as $key=>$product)
+                                <li>
+                                    <a href={!! $product->link !!}>
+                                    {!! $product->image !!}</a>
+                                    {!! $product->product_name !!}
+                                    ${!! $product->price !!}
+     
+                                    <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
+
+                                </li>
+                            @endforeach
+                        @endif
+                    </ul>
+                </form>
+
+            </section>
 
         </div>
     </main>

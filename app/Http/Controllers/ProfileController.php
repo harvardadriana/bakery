@@ -48,7 +48,7 @@ class ProfileController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'street' => 'required|min:1',
-            'state' => 'required',
+            'state_id' => 'required',
             'zip' => 'required|numeric|digits:5',
         ]);
 
@@ -57,9 +57,9 @@ class ProfileController extends Controller
 		// get new inputs from user
 		$user->name = $request->name;
 		$user->street = $request->street;
-		$user->state = $request->state;
 		$user->zip = $request->zip;
 		$user->subscribe = $request->subscribe;
+        $user->state_id = $request->state_id;
 
 		// save in the dB
 		$user->save();
@@ -81,10 +81,12 @@ class ProfileController extends Controller
 
         // get user information
         $user = User::find($id);
+        $state_name = State::find($user->state_id)->pluck('name')->first();
 
         return view('profile.view')->with([
             'path' => 'profile',
             'user' => $user,
+            'state_name' => $state_name,
         ]);
 
     }

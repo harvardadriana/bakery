@@ -39,16 +39,16 @@
                     </li>
 
                     <li>
-                        <label for='state'>* Select state</label>
-                        <select name="state" id="states">
-                            @foreach($statesForDropdown as $state)
-                                <option value='{{ $state }}' {{ ($user->state == $state )  ? 'SELECTED' : '' }} >{{ $state }}</option>
+                        <label for='state_id'>* Select state</label>
+                        <select name="state_id" id="states">
+                            @foreach($statesForDropdown as $state_id => $state_name)
+                                <option value='{{ $state_id }}' {{ ($user->state_id == $state_id )  ? 'SELECTED' : '' }} >{{ $state_name }}</option>
                             @endforeach
                         </select>
                     </li>
 
                     <li>
-                        <label for="zip">* Zip @if($errors->has('zip'))<span class="required">{{ $errors->first('zip') }}</span>@endif</label>
+                        <label for="zip">* Zip &#40;5 digits&#41;@if($errors->has('zip'))<span class="required">{{ $errors->first('zip') }}</span>@endif</label>
                         <input type="text" pattern="\d{5}" name="zip" id="zip" maxlength="5" value="{{ old('zip', $user->zip) }}" required />
                     </li>
                   

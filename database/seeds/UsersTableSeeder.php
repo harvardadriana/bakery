@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
 	        'name' => 'Jill TestUser',
 	        'password' => \Hash::make('helloworld'),
 	        'street' => 'Oxford street 23',
-            'state' => 'Massachusetts',
+            'state_id' => 21,
             'zip' => '02114',
             'subscribe' => 'yes',
 
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
 	        'name' => 'Jamal TestUser',
 	        'password' => \Hash::make('helloworld'),
 	        'street' => 'Brattle street 51',
-            'state' => 'Massachusetts',
+            'state_id' => 21,
             'zip' => '02138',
             'subscribe' => 'no',
 	    ]);

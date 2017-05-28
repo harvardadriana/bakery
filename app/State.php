@@ -22,7 +22,7 @@ class State extends Model
 
         foreach($states as $state) {
 
-            $statesForDropdown[] = $state['name'];
+            $statesForDropdown[$state['id']] = $state['name'];
 
         }
 

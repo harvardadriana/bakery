@@ -13,4 +13,25 @@ $(document).ready(function() {
     var mainnavclass = '.nav' + bodyclass;
     $(mainnavclass).attr('id', 'iamhere');
 
+	// hide/show food section
+	$('li.menu').click(function(){
+
+		// hide current food section
+		var active = $('.active').attr('id');
+		$('#' + active + 'gallery').addClass('hide');	
+
+		// show clicked food section
+		var chosenSection = $(this).attr('id');
+		$('#'+chosenSection+'gallery').removeClass('hide');
+
+		// hide/show clamshell navigation
+	    $('#side-menu .active').removeClass('active');
+	    $(this).addClass('active');
+
+	    $('#side-menu ul ul').hide();
+	    $('#side-menu .active').parents().show();
+	    $('#side-menu .active').children().show();
+
+	});
+
 });
