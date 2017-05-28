@@ -21,7 +21,7 @@
                 {{ Session::get('message') }}
             </div>
         @endif
-    
+
         <!-- SIDE NAVIGATION -->
         <div id="side-menu" class="left">
             <h2>Side navigation</h2>
@@ -51,15 +51,16 @@
             </ul>
         </div>
 
-        <!-- CAKE GALLERY -->
+        <!-- FOOD GALLERY -->
         <div id="food-gallery" class="gallery right">
 
-            <section id="sweetsgallery" class="" >
+            <form method='POST' action='/menu/sweets'> 
+                
+                {{ csrf_field() }}
 
-                <h1>Our Sweets</h1>
+                <section id="sweetsgallery" class="" >
 
-                <form method='POST' action='/menu/sweets'>
-                    {{ csrf_field() }}
+                    <h1>Our Sweets</h1>
 
                     <input id="submit" type='submit' value="Order" />
 
@@ -75,21 +76,16 @@
                                     ${!! $product->price !!}
      
                                     <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
-
                                 </li>
                             @endforeach
                         @endif
                     </ul>
-                </form>
 
-            </section>
+                </section>
 
-            <section id="snacksgallery" class="hide" >
+                <section id="snacksgallery" class="hide" >
 
-                <h1>Our Snacks</h1>
-
-                <form method='POST' action='/menu/sweets'>
-                    {{ csrf_field() }}
+                    <h1>Our Snacks</h1>
 
                     <input id="submit" type='submit' value="Order" />
 
@@ -105,21 +101,16 @@
                                     ${!! $product->price !!}
      
                                     <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
-
                                 </li>
                             @endforeach
                         @endif
                     </ul>
-                </form>
 
-            </section>
+                </section>
 
-            <section id="othersgallery" class="hide" >
+                <section id="othersgallery" class="hide" >
 
-                <h1>Pizzas &amp; Breads </h1>
-
-                <form method='POST' action='/menu/sweets'>
-                    {{ csrf_field() }}
+                    <h1>Pizzas &amp; Breads </h1>
 
                     <input id="submit" type='submit' value="Order" />
 
@@ -135,16 +126,17 @@
                                     ${!! $product->price !!}
      
                                     <label><input type="checkbox" name='order[]' value={{ ++$key }} {{ (++$key)  ? '' : 'CHECKED' }} />Add</label>
-
                                 </li>
                             @endforeach
                         @endif
                     </ul>
-                </form>
 
-            </section>
+                </section>
+
+            </form>
 
         </div>
+
     </main>
 
 @endsection

@@ -204,7 +204,7 @@ class ShopController extends Controller
                 return redirect('/menu/sweets');
 
             }
-
+            
             // create new order
             $order = new Order();
 
