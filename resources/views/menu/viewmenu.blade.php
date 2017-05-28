@@ -54,7 +54,7 @@
         <!-- FOOD GALLERY -->
         <div id="food-gallery" class="gallery right">
 
-            <form method='POST' action='/menu/sweets'> 
+            <form method='POST' action='/menu'> 
                 
                 {{ csrf_field() }}
 

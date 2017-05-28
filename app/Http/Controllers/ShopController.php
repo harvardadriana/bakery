@@ -76,6 +76,16 @@ class ShopController extends Controller
 
         }
 
+        // check if order belongs to same user
+        $user_id = Auth::id();
+
+        if($order->user_id != $user_id) {
+
+            Session::flash('message', 'You have no order with this number.');
+            return redirect('/orders');
+
+        }
+
         // get user's name
         $userName = $order->user->name;
 
@@ -118,6 +128,16 @@ class ShopController extends Controller
 
         }
 
+        // check if order belongs to same user
+        $user_id = Auth::id();
+
+        if($order->user_id != $user_id) {
+
+            Session::flash('message', 'You have no order with this number.');
+            return redirect('/orders');
+
+        }
+        
         $productsArray = [];
         $totalPrice = 0;
 
@@ -169,7 +189,7 @@ class ShopController extends Controller
 
 
     /**
-     * bakery/menu/sweets/ - GET
+     * bakery/menu/ - GET
      */
     public function showMenu(Request $request) {
         
@@ -179,7 +199,7 @@ class ShopController extends Controller
         $snacks = $menu->where('category', 'LIKE', 'snacks')->all();
         $others = $menu->where('category', 'LIKE', 'others')->all();
 
-        return view('menu.sweets')->with([
+        return view('menu.viewmenu')->with([
 
             'path' => 'menu',
             'sweets' => $sweets,
@@ -191,7 +211,7 @@ class ShopController extends Controller
 
 
     /**
-     * bakery/menu/sweets/  - POST
+     * bakery/menu/  - POST
      */
     public function saveOrder(Request $request) {
 
@@ -201,10 +221,10 @@ class ShopController extends Controller
             if(!Auth::user()) {
 
                 Session::flash('message', 'You need to login to place an order.');
-                return redirect('/menu/sweets');
+                return redirect('/menu');
 
             }
-            
+
             // create new order
             $order = new Order();
 
@@ -227,7 +247,7 @@ class ShopController extends Controller
         }
         else {
 
-            return redirect ('/menu/sweets');
+            return redirect ('/menu');
 
         }
     }

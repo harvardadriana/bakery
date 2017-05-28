@@ -12,16 +12,16 @@
             @if(Auth::check())
 
                 <li class="navhome"><a href="/" title="Home">Home</a></li>
-                <li class="navmenu"><a href="/menu/sweets" title="Menu">Menu</a>
+                <li class="navmenu"><a href="/menu" title="Menu">Menu</a>
                     <ul>
                         <!-- second level menu - cakes -->
-                        <li><a href="/menu/sweets" title="Sweets">Sweets</a>
+                        <li><a href="/menu" title="Sweets">Sweets</a>
                             <ul>
-                                <li><a href="/menu/sweets" title="Cakes">Cakes</a></li>
-                                <li><a href="/menu/sweets" title="Cupcakes">Cupcakes</a></li>
-                                <li><a href="/menu/sweets" title="Pies">Pies</a></li>
-                                <li><a href="/menu/sweets" title="Cookies">Cookies</a></li>
-                                <li><a href="/menu/sweets" title="Ice cream cakes">Ice cream cakes</a></li>
+                                <li><a href="/menu" title="Cakes">Cakes</a></li>
+                                <li><a href="/menu" title="Cupcakes">Cupcakes</a></li>
+                                <li><a href="/menu" title="Pies">Pies</a></li>
+                                <li><a href="/menu" title="Cookies">Cookies</a></li>
+                                <li><a href="/menu" title="Ice cream cakes">Ice cream cakes</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -38,16 +38,16 @@
             @else
 
                 <li class="navhome"><a href="/" title="Home">Home</a></li>
-                <li class="navmenu"><a href="/menu/sweets" title="Menu">Menu</a>
+                <li class="navmenu"><a href="/menu" title="Menu">Menu</a>
                     <ul>
                         <!-- second level menu - cakes -->
-                        <li><a href="/menu/sweets" title="Sweets">Sweets</a>
+                        <li><a href="/menu" title="Sweets">Sweets</a>
                             <ul>
-                                <li><a href="/menu/sweets" title="Cakes">Cakes</a></li>
-                                <li><a href="/menu/sweets" title="Cupcakes">Cupcakes</a></li>
-                                <li><a href="/menu/sweets" title="Pies">Pies</a></li>
-                                <li><a href="/menu/sweets" title="Cookies">Cookies</a></li>
-                                <li><a href="/menu/sweets" title="Ice cream cakes">Ice cream cakes</a></li>
+                                <li><a href="/menu" title="Cakes">Cakes</a></li>
+                                <li><a href="/menu" title="Cupcakes">Cupcakes</a></li>
+                                <li><a href="/menu" title="Pies">Pies</a></li>
+                                <li><a href="/menu" title="Cookies">Cookies</a></li>
+                                <li><a href="/menu" title="Ice cream cakes">Ice cream cakes</a></li>
                             </ul>
                         </li>
                     </ul>

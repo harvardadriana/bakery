@@ -27,10 +27,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 /**
- * bakery/menu/sweets/
+ * bakery/menu
  */
-Route::get('/menu/sweets', 'ShopController@showMenu');
-Route::post('/menu/sweets', 'ShopController@saveOrder');
+Route::get('/menu', 'ShopController@showMenu');
+Route::post('/menu', 'ShopController@saveOrder');
 
 
 /**
