@@ -13,8 +13,8 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <!-- Google fonts 
-        <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" /> -->
+        <!-- Google fonts  -->
+        <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" />
         <!-- my reset css -->   
         <link href="/css/reset.css" rel="stylesheet" />
         <!-- lightbox css -->
